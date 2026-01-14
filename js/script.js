@@ -16,6 +16,7 @@ const game = {
   biff: 1000,
   rendement: 1.1,
   tour: 1,
+  nbInvestisseurs: 0,
   enCours: true,
 };
 
@@ -38,6 +39,8 @@ function afficherPropositions() {
   document.getElementById(
     "propale2"
   ).textContent = `Proposition B : ${propale2.name} | ${propale2.cost}€ | +${propale2.bag} biff | +${propale2.output} rendement`;
+
+  
 }
 
 // ======================
@@ -76,6 +79,8 @@ function acheter() {
   game.biff -= +selectedPropale.cost;
   game.biff += +selectedPropale.bag;
   game.rendement += +selectedPropale.output;
+  game.nbInvestisseurs++
+  document.getElementById("investisseurs").textContent = game.nbInvestisseurs;
   game.tour++;
 
   selectedPropale = null;
@@ -89,12 +94,14 @@ function selectPropale1() {
   propale1Element.classList.add("selected");
   selectedPropale = propale1;
   propale2Element.classList.remove("selected");
+  document.getElementById("describe").textContent = propale1.text;
 }
 
 function selectPropale2() {
   propale2Element.classList.add("selected");
   selectedPropale = propale2;
   propale1Element.classList.remove("selected");
+  document.getElementById("describe").textContent = propale2.text;
 }
 
 // ======================

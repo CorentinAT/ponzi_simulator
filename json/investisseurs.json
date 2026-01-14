@@ -5,6 +5,7 @@
     "bag": 200,
     "cost": 200,
     "output": 0.01,
+    "text": "Alex coûte 200 biff et arrive avec un capital de 200 biff. Grâce à son automate cellulaire musical, il améliore le rendement de 1.%",
     "upgrade_id": 1
   },
   {
@@ -13,6 +14,7 @@
     "bag": 500,
     "cost": 400,
     "output": -0.01,
+    "text": "Léna coûte 400 biff et arrive avec un capital de 400 biff. Cependant elle baisse le rendement de 1%.",
     "upgrade_id": 1
   },
   {
@@ -21,6 +23,7 @@
     "bag": 100,
     "cost": 100,
     "output": 0.05,
+    "text": "Elouan coûte 100 biff et arrive avec un capital de 100 biff. Ses parts dans différentes usines de production de boissons alcoolisées augmentent le rendement de 5%.",
     "upgrade_id": 1
   },
   {
@@ -29,6 +32,7 @@
     "bag": 1000,
     "cost": 500,
     "output": 0.01,
+    "text": "Benoit coûte 500 biff et arrive avec un capital de 1000 biff. Grâce à ses prévisions météo, il augmente le rendu de 1%.",
     "upgrade_id": 1
   },
   {
@@ -37,6 +41,7 @@
     "bag": 100,
     "cost": 1000,
     "output": 0.08,
+    "text": "Yanis coûte 1000 biff et arrive avec un capital de 100 biff. Il augmente le rendement de 8%.",
     "upgrade_id": 1
   },
   {
@@ -45,6 +50,7 @@
     "bag": 400,
     "cost": 200,
     "output": 0.0,
+    "text": "Mathieu coûte 200 biff mais rapporte 400 biff grâce à son business de cartes Pokémon",
     "upgrade_id": 1
   },
   {
@@ -53,6 +59,7 @@
     "bag": 1500,
     "cost": 600,
     "output": -0.02,
+    "text": "Agathe coûte 600 biff et arrive avec un capital de 1500 biff. Cependant elle baisse le rendement de 2%",
     "upgrade_id": 1
   }
 ]
