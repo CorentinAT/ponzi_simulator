@@ -101,5 +101,29 @@
     "name": "Ligaments croisés",
     "biff": -400,
     "output": 0.0
+  },
+  {
+    "id": 18,
+    "name": "Cadeau de Mère-grand",
+    "biff": 100,
+    "output": 0.0
+  },
+  {
+    "id": 19,
+    "name": "Addiction à la cigarette",
+    "biff": 0,
+    "output": -0.05
+  },
+  {
+    "id": 20,
+    "name": "Assurance",
+    "biff": 0,
+    "output": -0.1
+  },
+  {
+    "id": 21,
+    "name": "Crevaison",
+    "biff": -150,
+    "output": -0.2
   }
 ]
