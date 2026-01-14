@@ -2,7 +2,7 @@ import * as THREE from "three";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
 
 const scene = new THREE.Scene();
-scene.background = new THREE.Color(0xffffff);
+scene.background = new THREE.Color(0x000000);
 
 const cameraAnim = {
   active: false,
@@ -32,6 +32,11 @@ const controls = new OrbitControls(camera, renderer.domElement);
 controls.enableZoom = true;
 controls.minDistance = 3;
 controls.maxDistance = 6;
+
+let fractalDepth = 0;
+
+const fractalPyramid = createFractalPyramid(1, fractalDepth);
+scene.add(fractalPyramid);
 
 function createPyramidGeometry(size) {
   const a = size;
@@ -136,11 +141,6 @@ function createFractalPyramid(size, depth, extremity = null) {
 
   return group;
 }
-
-let fractalDepth = 0;
-
-const fractalPyramid = createFractalPyramid(1, fractalDepth);
-scene.add(fractalPyramid);
 
 function animate() {
   requestAnimationFrame(animate);
