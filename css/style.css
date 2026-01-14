@@ -1,0 +1,9 @@
+.render {
+  max-width: 50%;
+  display: flex;
+}
+
+.infotab {
+  max-width: 50%;
+  display: flex;
+}
