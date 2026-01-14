@@ -106,6 +106,87 @@
     "output": -0.25,
     "text": "Oussama coûte 200 biff et arrive avec un capital de 500 biff. Il baisse le rendement de 25%, n'hésitez à ne vraiment pas lui faire confiance.",
     "upgrade_id": 1
+  },
+  {
+    "id": 13,
+    "name": "Romane J.",
+    "bag": 200,
+    "cost": 200,
+    "output": -0.06,
+    "text": "Romane coûte 200 biff et arrive avec un capital de 200 biff. Elle baisse le rendement de 6%.",
+    "upgrade_id": 1
+  },
+  {
+    "id": 14,
+    "name": "Novelli",
+    "bag": 100,
+    "cost": 400,
+    "output": -0.1,
+    "text": "Novelli coûte 400 biff et arrive avec un capital de 100 biff. Il applique une division euclidienne de 4600/160% sur votre rendement.",
+    "upgrade_id": 1
+  },
+  {
+    "id": 15,
+    "name": "Corentin",
+    "bag": 600,
+    "cost": 200,
+    "output": 0.1,
+    "text": "Corentin coûte 200 biff et arrive avec un capital de 600 biff. Vu qu'il est super sympa, il augmente votre rendement de 10%.",
+    "upgrade_id": 1
+  },
+  {
+    "id": 16,
+    "name": "Laïn",
+    "bag": 1000,
+    "cost": 800,
+    "output": 0.04,
+    "text": "Laïn coûte 800 biff et arrive avec un capital de 1000 biff. Bientôt le disque d'or, augmentation du rendement de 4%.",
+    "upgrade_id": 1
+  },
+  {
+    "id": 17,
+    "name": "Nils",
+    "bag": 600,
+    "cost": 400,
+    "output": -0.04,
+    "text": "Nils coûte 400 biff et arrive avec un capital de 600 biff. Il t'enferme dans les cavernes, baisse du rendement de 4%.",
+    "upgrade_id": 1
+  },
+  {
+    "id": 18,
+    "name": "Lalie",
+    "bag": 0,
+    "cost": 400,
+    "output": 0,
+    "text": "Lalie coûte 400 biff, mais vous ne gagnez rien à cause des ligaments croisés.",
+    "upgrade_id": 1
+  },
+  {
+    "id": 19,
+    "name": "Yasmine",
+    "bag": 300,
+    "cost": 200,
+    "output": 0.03,
+    "text": "Yasmine coûte 200 biff et arrive avec un capital de 300 biff. Augmentation du rendement de 3%.",
+    "upgrade_id": 1
+  },
+  {
+    "id": 20,
+    "name": "Qays",
+    "bag": 200,
+    "cost": 800,
+    "output": -0.05,
+    "text": "Qays coûte 800 biff et arrive avec un capital de 200 biff. Baisse du rendement de 4%.",
+    "upgrade_id": 1
+  },
+  {
+    "id": 21,
+    "name": "Jules",
+    "bag": 100,
+    "cost": 500,
+    "output": -0.10,
+    "text": "Jules coûte 500 biff et arrive avec un capital de 100 biff. Il te fait un tunnel en parlant de CoolLab, baisse du rendement de 10%.",
+    "upgrade_id": 1
   }
   
 ]
