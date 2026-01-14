@@ -18,6 +18,7 @@ const propale2Element = document.getElementById("propale2");
 const acceptPropaleButton = document.getElementById("acceptpropale");
 const eventElement = document.getElementById("event");
 const eventButton = document.getElementById("skip-event");
+const startButton = document.getElementById("start");
 const propalesElement = document.getElementById("propales");
 const descriptionElement = document.getElementById("describe");
 const propalesTextElement = document.getElementById("propales-text");
@@ -181,11 +182,16 @@ function endGame() {
   window.location.reload();
 }
 
+// Lancer la partie après les explications
+function startGame() {
+  document.getElementById("rules").style.display = "none";
+  document.getElementById("game").style.display = "flex";
+  majStats();
+  nouveauTour();
+}
+
 propale1Element.onclick = () => selectPropale1();
 propale2Element.onclick = () => selectPropale2();
 acceptPropaleButton.onclick = () => acheter();
 eventButton.onclick = () => acceptEvent();
-
-// Lancement au chargement de la page
-majStats();
-nouveauTour();
+startButton.onclick = () => startGame();
