@@ -18,7 +18,7 @@ const descriptionElement = document.getElementById("describe");
 const propalesTextElement = document.getElementById("propales-text");
 
 const game = {
-  biff: 1000,
+  biff: 900,
   rendement: 1.1,
   tour: 1,
   nbInvestisseurs: 0,
@@ -161,7 +161,7 @@ function selectPropale2() {
 
 function endGame() {
   alert(
-    "Vous avez survécu 7 tours, vous lâchez tout partez du pays avec " +
+    "Vous avez survécu 7 tours, vous lâchez tout et partez du pays avec " +
       parseInt(game.biff) +
       " biff"
   );
