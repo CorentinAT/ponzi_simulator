@@ -17,7 +17,7 @@ Avec Docker :
 
 ```bash
 docker build -t ponzi-simulator .
-docker run -p 5173:5173 ponzi-simulator
+docker run -p 80:80 ponzi-simulator
 ```
 
 ## Explications
