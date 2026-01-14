@@ -21,6 +21,7 @@ body {
 
 #propales {
   display: flex;
+  gap: 50px;
 }
 
 #propales div {
@@ -31,8 +32,8 @@ body {
 }
 
 #propales .selected {
-  border-color: red;
-  background-color: rgba(255, 0, 0, 0.329);
+  border-color: rgb(0, 255, 0);
+  background-color: rgba(0, 255, 0, 0.329);
 }
 
 button {
@@ -43,11 +44,22 @@ button {
   cursor: pointer;
 }
 
+button:not(.disabled):hover {
+  background-color: rgba(0, 255, 0, 0.329);
+}
+
+button.disabled {
+  cursor: not-allowed;
+  opacity: 70%;
+}
+
 #game {
   display: flex;
   align-items: center;
   flex-direction: column;
   gap: 30px;
+  width: 100%;
+  align-items: center;
 }
 
 #infos {

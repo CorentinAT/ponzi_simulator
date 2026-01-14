@@ -40,17 +40,11 @@ function majStats() {
 }
 
 function afficherPropositions() {
-  document.getElementById("propale1").textContent = `Proposition A : ${
-    propale1.name
-  } | ${propale1.cost}€ | ${propale1.bag >= 0 ? "+" : ""}${
-    propale1.bag
-  } biff | ${propale1.output >= 0 ? "+" : ""}${propale1.output} rendement`;
+  document.getElementById("propale1-name").textContent = propale1.name;
+  document.getElementById("propale1-cost").textContent = propale1.cost;
 
-  document.getElementById("propale2").textContent = `Proposition B : ${
-    propale2.name
-  } | ${propale2.cost}€ | ${propale2.bag >= 0 ? "+" : ""}${
-    propale2.bag
-  } biff | ${propale2.output >= 0 ? "+" : ""}${propale2.output} rendement`;
+  document.getElementById("propale2-name").textContent = propale2.name;
+  document.getElementById("propale2-cost").textContent = propale2.cost;
 }
 
 // ======================
@@ -62,6 +56,7 @@ function nouveauTour() {
   }
   if (!game.enCours) return;
 
+  acceptPropaleButton.classList.add("disabled");
   eventElement.style.display = "none";
   propalesElement.style.display = "flex";
   acceptPropaleButton.style.display = "flex";
@@ -132,16 +127,23 @@ function acceptEvent() {
     game.biff /= parseInt(currentEvent.biff);
     game.rendement /= parseFloat(currentEvent.output);
   } else if (currentEvent.mode === "random") {
-    game.biff += Math.floor(
+    const resultatCasino = Math.floor(
       Math.random() *
         (parseInt(currentEvent.max) - parseInt(currentEvent.min)) +
         parseInt(currentEvent.min)
     );
+    game.biff += resultatCasino;
+    if (resultatCasino >= 0) {
+      alert(`Vous avez empoché ${resultatCasino}$ au casino !`);
+    } else {
+      alert(`Vous avez perdu ${Math.abs(resultatCasino)}$ au casino...`);
+    }
   }
   nouveauTour();
 }
 
 function selectPropale1() {
+  acceptPropaleButton.classList.remove("disabled");
   propale1Element.classList.add("selected");
   selectedPropale = propale1;
   propale2Element.classList.remove("selected");
@@ -149,6 +151,7 @@ function selectPropale1() {
 }
 
 function selectPropale2() {
+  acceptPropaleButton.classList.remove("disabled");
   propale2Element.classList.add("selected");
   selectedPropale = propale2;
   propale1Element.classList.remove("selected");
@@ -157,7 +160,7 @@ function selectPropale2() {
 
 function endGame() {
   alert("Vous avez survécu 8 tours, et empoché ", game.biff, "biff");
- }
+}
 // ======================
 // BOUTONS
 // ======================
