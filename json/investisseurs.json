@@ -98,13 +98,13 @@
     "text": "Anthony coûte 500 biff et arrive avec un capital de 500 biff. Grâce à ses multiples diplômes, il augmente le rendement de 7%.",
     "upgrade_id": 1
   },
-{
+  {
     "id": 12,
     "name": "Oussama Ammar",
     "bag": 500,
     "cost": 200,
     "output": -0.25,
-    "text": "Oussama coûte 200 biff et arrive avec un capital de 500 biff. Il baisse le rendement de 25%, n'hésitez à ne vraiment pas lui faire confiance.",
+    "text": "Oussama coûte 200 biff et arrive avec un capital de 500 biff. Il baisse le rendement de 25%, n'hésitez pas à ne vraiment pas lui faire confiance.",
     "upgrade_id": 1
   },
   {
@@ -184,9 +184,8 @@
     "name": "Jules",
     "bag": 100,
     "cost": 500,
-    "output": -0.10,
+    "output": -0.1,
     "text": "Jules coûte 500 biff et arrive avec un capital de 100 biff. Il te fait un tunnel en parlant de CoolLab, baisse du rendement de 10%.",
     "upgrade_id": 1
   }
-  
 ]

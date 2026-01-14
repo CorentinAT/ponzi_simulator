@@ -1,5 +1,6 @@
 * {
   color: white;
+  font-family: "Courier New", Courier, monospace;
 }
 
 .render {
@@ -29,6 +30,10 @@ body {
   padding: 20px;
   user-select: none;
   cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 200px;
 }
 
 #propales .selected {
@@ -73,7 +78,8 @@ button.disabled {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 100%;
+  width: 90%;
+  margin: 0 auto;
 }
 
 #skip-event {
@@ -83,4 +89,10 @@ button.disabled {
 
 #skip-event:hover {
   color: rgb(10, 255, 10);
+}
+
+#titre-event,
+#propale1-name,
+#propale2-name {
+  font-weight: bold;
 }
