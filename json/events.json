@@ -1,0 +1,105 @@
+[
+  {
+    "id": 1,
+    "name": "Braquage de banque",
+    "biff": 500,
+    "output": 0.0
+  },
+  {
+    "id": 2,
+    "name": "Stonks",
+    "biff": 0,
+    "output": 0.1
+  },
+  {
+    "id": 3,
+    "name": "Not stonks",
+    "biff": 0,
+    "output": -0.1
+  },
+  {
+    "id": 4,
+    "name": "Héritage",
+    "biff": 1000,
+    "output": -0.2
+  },
+  {
+    "id": 5,
+    "name": "Liquidation",
+    "biff": "biff / 4",
+    "output": 0.0
+  },
+  {
+    "id": 6,
+    "name": "Euromillion",
+    "biff": 3000,
+    "output": -0.3
+  },
+  {
+    "id": 7,
+    "name": "Hack général",
+    "biff": 0,
+    "output": "output / 2"
+  },
+  {
+    "id": 8,
+    "name": "Racket organisé",
+    "biff": 200,
+    "output": 0.0
+  },
+  {
+    "id": 9,
+    "name": "Coup de pub",
+    "biff": 0,
+    "output": 0.1
+  },
+  {
+    "id": 10,
+    "name": "OnlyFans",
+    "biff": 0,
+    "output": 0.1
+  },
+  {
+    "id": 11,
+    "name": "Petit business",
+    "biff": 100,
+    "output": 0.0
+  },
+  {
+    "id": 12,
+    "name": "Pass de combat",
+    "biff": 0,
+    "output": -0.05
+  },
+  {
+    "id": 13,
+    "name": "Casino",
+    "biff": "random(-500, 250)",
+    "output": 0.0
+  },
+  {
+    "id": 14,
+    "name": "Impôts",
+    "biff": 0,
+    "output": -0.1
+  },
+  {
+    "id": 15,
+    "name": "URSSAF",
+    "biff": 0,
+    "output": -0.2
+  },
+  {
+    "id": 16,
+    "name": "La France à Macron",
+    "mode": "divide",
+    "biff": "biff / 2",
+    "output": "output / 2"
+  },
+  {
+    "id": 17,
+    "name": "Ligaments croisés",
+    "biff": -400,
+    "output": 0.0
+  }
+]

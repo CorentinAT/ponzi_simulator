@@ -1,5 +1,12 @@
+import investisseurs from "../json/investisseurs.json";
+
 let pyramid = [];
 
+let selectedPropale = null;
+
+const propale1Element = document.getElementById("propale1");
+const propale2Element = document.getElementById("propale2");
+const acceptPropaleButton = document.getElementById("acceptpropale");
 
 // ======================
 // ÉTAT DU JEU
@@ -8,7 +15,7 @@ const game = {
   biff: 1000,
   rendement: 1.1,
   tour: 1,
-  enCours: true
+  enCours: true,
 };
 
 let propale1 = null;
@@ -22,18 +29,6 @@ function randomInt(min, max) {
 }
 
 // ======================
-// PROPOSITIONS
-// ======================
-function creerProposition() {
-  return {
-    cout: randomInt(200, 600),
-    gainBiff: randomInt(100, 400),
-    gainRendement: +(Math.random() * 0.2).toFixed(2),
-    texte: "Un investisseur douteux veut entrer dans la pyramide"
-  };
-}
-
-// ======================
 // AFFICHAGE
 // ======================
 function majStats() {
@@ -42,11 +37,13 @@ function majStats() {
 }
 
 function afficherPropositions() {
-  document.getElementById("propale1").textContent =
-    `Proposition A : ${propale1.cout}€ | +${propale1.gainBiff} biff | +${propale1.gainRendement} rendement`;
+  document.getElementById(
+    "propale1"
+  ).textContent = `Proposition A : ${propale1.name} | ${propale1.cost}€ | +${propale1.bag} biff | +${propale1.output} rendement`;
 
-  document.getElementById("propale2").textContent =
-    `Proposition B : ${propale2.cout}€ | +${propale2.gainBiff} biff | +${propale2.gainRendement} rendement`;
+  document.getElementById(
+    "propale2"
+  ).textContent = `Proposition B : ${propale2.name} | ${propale2.cost}€ | +${propale2.bag} biff | +${propale2.output} rendement`;
 }
 
 // ======================
@@ -58,33 +55,56 @@ function nouveauTour() {
   // application du rendement à chaque tour
   game.biff *= game.rendement;
 
-  propale1 = creerProposition();
-  propale2 = creerProposition();
+  const idx1 = Math.floor(Math.random() * investisseurs.length);
+  let idx2 = Math.floor(Math.random() * investisseurs.length);
+  if (idx2 === idx1) {
+    idx2 = Math.floor(Math.random() * investisseurs.length);
+  }
+
+  propale1 = investisseurs[idx1];
+  propale2 = investisseurs[idx2];
 
   majStats();
   afficherPropositions();
 }
 
-function acheter(propale) {
-  if (game.biff < propale.cout) {
+function acheter() {
+  if (game.biff < selectedPropale.cost) {
     game.enCours = false;
-    alert("💥 GAME OVER : plus assez de biff");
+    alert("GAME OVER : plus assez de biff");
     return;
   }
 
-  game.biff -= propale.cout;
-  game.biff += propale.gainBiff;
-  game.rendement += propale.gainRendement;
+  game.biff -= +selectedPropale.cost;
+  game.biff += +selectedPropale.bag;
+  game.rendement += +selectedPropale.output;
   game.tour++;
 
+  selectedPropale = null;
+  propale1Element.classList.remove("selected");
+  propale2Element.classList.remove("selected");
+
   nouveauTour();
+}
+
+function selectPropale1() {
+  propale1Element.classList.add("selected");
+  selectedPropale = propale1;
+  propale2Element.classList.remove("selected");
+}
+
+function selectPropale2() {
+  propale2Element.classList.add("selected");
+  selectedPropale = propale2;
+  propale1Element.classList.remove("selected");
 }
 
 // ======================
 // BOUTONS
 // ======================
-document.getElementById("propale1").onclick = () => acheter(propale1);
-document.getElementById("propale2").onclick = () => acheter(propale2);
+propale1Element.onclick = () => selectPropale1();
+propale2Element.onclick = () => selectPropale2();
+acceptPropaleButton.onclick = () => acheter();
 
 // ======================
 // LANCEMENT DU JEU

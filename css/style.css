@@ -11,3 +11,18 @@
 body {
   display: flex;
 }
+
+#propales {
+  display: flex;
+}
+
+#propales div {
+  border: solid 1px;
+  padding: 20px;
+  user-select: none;
+  cursor: pointer;
+}
+
+#propales .selected {
+  border-color: red;
+}

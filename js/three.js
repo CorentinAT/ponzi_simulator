@@ -5,12 +5,12 @@ const scene = new THREE.Scene();
 scene.background = new THREE.Color(0xffffff);
 
 const camera = new THREE.PerspectiveCamera(
-  75,
+  30,
   window.innerWidth / 2 / (window.innerHeight * 0.8),
   0.1,
   1000
 );
-camera.position.z = 5;
+camera.position.z = 3;
 
 const renderer = new THREE.WebGLRenderer({ antialias: true });
 renderer.setSize(window.innerWidth / 2, window.innerHeight * 0.8);
@@ -126,7 +126,7 @@ function createFractalPyramid(size, depth, extremity = null) {
 }
 
 const INITIAL_SIZE = 1;
-const FRACTAL_DEPTH = 12;
+let FRACTAL_DEPTH = 1;
 
 const fractalPyramid = createFractalPyramid(INITIAL_SIZE, FRACTAL_DEPTH);
 scene.add(fractalPyramid);
@@ -137,10 +137,20 @@ function animate() {
   renderer.render(scene, camera);
 }
 
+function unzoom() {
+  FRACTAL_DEPTH += 1;
+  scene.remove(fractalPyramid);
+  const fractalPyramid2 = createFractalPyramid(INITIAL_SIZE, FRACTAL_DEPTH);
+  scene.add(fractalPyramid2);
+  animate();
+}
+
+document.getElementById("unzoom").onclick = () => unzoom();
+
 animate();
 
-window.addEventListener("resize", () => {
-  camera.aspect = window.innerWidth / window.innerHeight;
-  camera.updateProjectionMatrix();
-  renderer.setSize(window.innerWidth, window.innerHeight);
-});
+// window.addEventListener("resize", () => {
+//   camera.aspect = window.innerWidth / window.innerHeight;
+//   camera.updateProjectionMatrix();
+//   renderer.setSize(window.innerWidth, window.innerHeight);
+// });

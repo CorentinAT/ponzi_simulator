@@ -1,0 +1,58 @@
+[
+  {
+    "id": 1,
+    "name": "Alex",
+    "bag": 200,
+    "cost": 200,
+    "output": 0.01,
+    "upgrade_id": 1
+  },
+  {
+    "id": 2,
+    "name": "Léna",
+    "bag": 500,
+    "cost": 400,
+    "output": -0.01,
+    "upgrade_id": 1
+  },
+  {
+    "id": 3,
+    "name": "Elouan",
+    "bag": 100,
+    "cost": 100,
+    "output": 0.05,
+    "upgrade_id": 1
+  },
+  {
+    "id": 4,
+    "name": "Benoit",
+    "bag": 1000,
+    "cost": 500,
+    "output": 0.01,
+    "upgrade_id": 1
+  },
+  {
+    "id": 5,
+    "name": "Yanis",
+    "bag": 100,
+    "cost": 1000,
+    "output": 0.08,
+    "upgrade_id": 1
+  },
+  {
+    "id": 6,
+    "name": "Mathieu",
+    "bag": 400,
+    "cost": 200,
+    "output": 0.0,
+    "upgrade_id": 1
+  },
+  {
+    "id": 7,
+    "name": "Agathe",
+    "bag": 1500,
+    "cost": 600,
+    "output": -0.02,
+    "upgrade_id": 1
+  }
+]
