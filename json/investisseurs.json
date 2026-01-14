@@ -13,17 +13,17 @@
     "name": "Léna",
     "bag": 500,
     "cost": 400,
-    "output": -0.01,
-    "text": "Léna coûte 400 biff et arrive avec un capital de 400 biff. Cependant elle baisse le rendement de 1%.",
+    "output": -0.04,
+    "text": "Léna coûte 400 biff et arrive avec un capital de 400 biff. Cependant elle baisse le rendement de 4%.",
     "upgrade_id": 1
   },
   {
     "id": 3,
     "name": "Elouan",
     "bag": 100,
-    "cost": 100,
+    "cost": 600,
     "output": 0.05,
-    "text": "Elouan coûte 100 biff et arrive avec un capital de 100 biff. Ses parts dans différentes usines de production de boissons alcoolisées augmentent le rendement de 5%.",
+    "text": "Elouan coûte 600 biff et arrive avec un capital de 100 biff. Ses parts dans différentes usines de production de boissons alcoolisées augmentent le rendement de 5%.",
     "upgrade_id": 1
   },
   {
@@ -31,8 +31,8 @@
     "name": "Benoit",
     "bag": 1000,
     "cost": 500,
-    "output": 0.01,
-    "text": "Benoit coûte 500 biff et arrive avec un capital de 1000 biff. Grâce à ses prévisions météo, il augmente le rendu de 1%.",
+    "output": -0.03,
+    "text": "Benoit coûte 500 biff et arrive avec un capital de 1000 biff. à cause de ses mauvaises prévisions météo, il baisse le rendu de 3%.",
     "upgrade_id": 1
   },
   {
@@ -50,7 +50,7 @@
     "bag": 400,
     "cost": 200,
     "output": 0.0,
-    "text": "Mathieu coûte 200 biff mais rapporte 400 biff grâce à son business de cartes Pokémon",
+    "text": "Mathieu coûte 200 biff mais rapporte 400 biff grâce à son business de cartes Pokémon.",
     "upgrade_id": 1
   },
   {
@@ -58,8 +58,54 @@
     "name": "Agathe",
     "bag": 1500,
     "cost": 600,
+    "output": -0.08,
+    "text": "Agathe coûte 600 biff et arrive avec un capital de 1500 biff. Cependant elle baisse le rendement de 8%.",
+    "upgrade_id": 1
+  },
+  {
+    "id": 8,
+    "name": "Marine",
+    "bag": 300,
+    "cost": 600,
     "output": -0.02,
-    "text": "Agathe coûte 600 biff et arrive avec un capital de 1500 biff. Cependant elle baisse le rendement de 2%",
+    "text": "Marine coûte 600 biff et arrive avec un capital de 300 biff. Cependant elle baisse le rendement de 2%.",
+    "upgrade_id": 1
+  },
+  {
+    "id": 9,
+    "name": "Alina",
+    "bag": 100,
+    "cost": 700,
+    "output": 0.02,
+    "text": "Alina coûte 700 biff et arrive avec un capital de 100 biff. Elle augmente le rendement de 2%.",
+    "upgrade_id": 1
+  },
+  {
+    "id": 10,
+    "name": "Alex G.",
+    "bag": 100,
+    "cost": 200,
+    "output": -0.12,
+    "text": "Alex Grosdidier coûte 200 biff et arrive avec un capital de 100 biff. Cependant, il baisse le rendement de 12%, c'est un mauvais investisseur.",
+    "upgrade_id": 1
+  },
+  {
+    "id": 11,
+    "name": "Anthony",
+    "bag": 500,
+    "cost": 500,
+    "output": 0.07,
+    "text": "Anthony coûte 500 biff et arrive avec un capital de 500 biff. Grâce à ses multiples diplômes, il augmente le rendement de 7%.",
+    "upgrade_id": 1
+  },
+{
+    "id": 12,
+    "name": "Oussama Ammar",
+    "bag": 500,
+    "cost": 200,
+    "output": -0.25,
+    "text": "Oussama coûte 200 biff et arrive avec un capital de 500 biff. Il baisse le rendement de 25%, n'hésitez à ne vraiment pas lui faire confiance.",
     "upgrade_id": 1
   }
+  
 ]

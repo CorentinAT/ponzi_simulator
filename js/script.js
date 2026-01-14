@@ -47,6 +47,9 @@ function afficherPropositions() {
 // LOGIQUE DU JEU
 // ======================
 function nouveauTour() {
+  if (game.tour > 8) {
+    endGame();
+  }
   if (!game.enCours) return;
 
   // application du rendement à chaque tour
@@ -104,6 +107,9 @@ function selectPropale2() {
   document.getElementById("describe").textContent = propale2.text;
 }
 
+function endGame() {
+  alert("Vous avez survécu 8 tours, et empoché ", game.biff, "biff");
+ }
 // ======================
 // BOUTONS
 // ======================
