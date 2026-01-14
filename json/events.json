@@ -2,90 +2,105 @@
   {
     "id": 1,
     "name": "Braquage de banque",
+    "mode": "add",
     "biff": 500,
     "output": 0.0
   },
   {
     "id": 2,
     "name": "Stonks",
+    "mode": "add",
     "biff": 0,
     "output": 0.1
   },
   {
     "id": 3,
     "name": "Not stonks",
+    "mode": "add",
     "biff": 0,
     "output": -0.1
   },
   {
     "id": 4,
     "name": "Héritage",
+    "mode": "add",
     "biff": 1000,
     "output": -0.2
   },
   {
     "id": 5,
     "name": "Liquidation",
-    "biff": "biff / 4",
-    "output": 0.0
+    "mode": "divide",
+    "biff": 4,
+    "output": 1
   },
   {
     "id": 6,
     "name": "Euromillion",
+    "mode": "add",
     "biff": 3000,
     "output": -0.3
   },
   {
     "id": 7,
     "name": "Hack général",
-    "biff": 0,
-    "output": "output / 2"
+    "mode": "divide",
+    "biff": 1,
+    "output": 2
   },
   {
     "id": 8,
     "name": "Racket organisé",
+    "mode": "add",
     "biff": 200,
     "output": 0.0
   },
   {
     "id": 9,
     "name": "Coup de pub",
+    "mode": "add",
     "biff": 0,
     "output": 0.1
   },
   {
     "id": 10,
     "name": "OnlyFans",
+    "mode": "add",
     "biff": 0,
     "output": 0.1
   },
   {
     "id": 11,
     "name": "Petit business",
+    "mode": "add",
     "biff": 100,
     "output": 0.0
   },
   {
     "id": 12,
     "name": "Pass de combat",
+    "mode": "add",
     "biff": 0,
     "output": -0.05
   },
   {
     "id": 13,
     "name": "Casino",
-    "biff": "random(-500, 250)",
-    "output": 0.0
+    "mode": "random",
+    "min": -500,
+    "max": 250
   },
   {
     "id": 14,
     "name": "Impôts",
+    "mode": "add",
     "biff": 0,
     "output": -0.1
   },
   {
     "id": 15,
     "name": "URSSAF",
+    "mode": "add",
     "biff": 0,
     "output": -0.2
   },
@@ -93,36 +108,41 @@
     "id": 16,
     "name": "La France à Macron",
     "mode": "divide",
-    "biff": "biff / 2",
-    "output": "output / 2"
+    "biff": 2,
+    "output": 2
   },
   {
     "id": 17,
     "name": "Ligaments croisés",
+    "mode": "add",
     "biff": -400,
     "output": 0.0
   },
   {
     "id": 18,
     "name": "Cadeau de Mère-grand",
+    "mode": "add",
     "biff": 100,
     "output": 0.0
   },
   {
     "id": 19,
     "name": "Addiction à la cigarette",
+    "mode": "add",
     "biff": 0,
     "output": -0.05
   },
   {
     "id": 20,
     "name": "Assurance",
+    "mode": "add",
     "biff": 0,
     "output": -0.1
   },
   {
     "id": 21,
     "name": "Crevaison",
+    "mode": "add",
     "biff": -150,
     "output": -0.2
   }

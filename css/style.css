@@ -32,4 +32,43 @@ body {
 
 #propales .selected {
   border-color: red;
+  background-color: rgba(255, 0, 0, 0.329);
+}
+
+button {
+  border: solid 2px;
+  border-color: white;
+  background: none;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+#game {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 30px;
+}
+
+#infos {
+  display: flex;
+  gap: 20px;
+}
+
+#event {
+  border: solid 1px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+#skip-event {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+#skip-event:hover {
+  color: rgb(10, 255, 10);
 }

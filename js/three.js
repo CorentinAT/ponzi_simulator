@@ -31,7 +31,9 @@ document.getElementById("pyramid").appendChild(renderer.domElement);
 const controls = new OrbitControls(camera, renderer.domElement);
 controls.enableZoom = true;
 controls.minDistance = 3;
-controls.maxDistance = 6;
+controls.maxDistance = 5;
+controls.autoRotate = true;
+controls.autoRotateSpeed = -1;
 
 let fractalDepth = 0;
 
@@ -180,7 +182,7 @@ export function nextLevel(turn) {
     if (turn + 1 < 4) {
       fractalDepth += 1;
       camTranslation = 0.3;
-      camRecul = 3;
+      camRecul = 4;
     } else {
       fractalDepth += 3;
       camTranslation = 1;

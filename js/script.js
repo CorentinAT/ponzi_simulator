@@ -1,13 +1,19 @@
 import investisseurs from "../json/investisseurs.json";
+import evenements from "../json/events.json";
 import { nextLevel } from "./three";
 
 let selectedPropale = null;
 
 let tour = 0;
 
+const eventsPasses = [];
+
 const propale1Element = document.getElementById("propale1");
 const propale2Element = document.getElementById("propale2");
 const acceptPropaleButton = document.getElementById("acceptpropale");
+const eventElement = document.getElementById("event");
+const eventButton = document.getElementById("skip-event");
+const propalesElement = document.getElementById("propales");
 
 // ======================
 // ÉTAT DU JEU
@@ -23,6 +29,8 @@ const game = {
 let propale1 = null;
 let propale2 = null;
 
+let currentEvent = null;
+
 // ======================
 // AFFICHAGE
 // ======================
@@ -32,15 +40,17 @@ function majStats() {
 }
 
 function afficherPropositions() {
-  document.getElementById(
-    "propale1"
-  ).textContent = `Proposition A : ${propale1.name} | ${propale1.cost}€ | +${propale1.bag} biff | +${propale1.output} rendement`;
+  document.getElementById("propale1").textContent = `Proposition A : ${
+    propale1.name
+  } | ${propale1.cost}€ | ${propale1.bag >= 0 ? "+" : ""}${
+    propale1.bag
+  } biff | ${propale1.output >= 0 ? "+" : ""}${propale1.output} rendement`;
 
-  document.getElementById(
-    "propale2"
-  ).textContent = `Proposition B : ${propale2.name} | ${propale2.cost}€ | +${propale2.bag} biff | +${propale2.output} rendement`;
-
-  
+  document.getElementById("propale2").textContent = `Proposition B : ${
+    propale2.name
+  } | ${propale2.cost}€ | ${propale2.bag >= 0 ? "+" : ""}${
+    propale2.bag
+  } biff | ${propale2.output >= 0 ? "+" : ""}${propale2.output} rendement`;
 }
 
 // ======================
@@ -51,6 +61,10 @@ function nouveauTour() {
     endGame();
   }
   if (!game.enCours) return;
+
+  eventElement.style.display = "none";
+  propalesElement.style.display = "flex";
+  acceptPropaleButton.style.display = "flex";
 
   // application du rendement à chaque tour
   game.biff *= game.rendement;
@@ -79,10 +93,10 @@ function acheter() {
     return;
   }
 
-  game.biff -= +selectedPropale.cost;
-  game.biff += +selectedPropale.bag;
-  game.rendement += +selectedPropale.output;
-  game.nbInvestisseurs++
+  game.biff -= parseInt(selectedPropale.cost);
+  game.biff += parseInt(selectedPropale.bag);
+  game.rendement += parseFloat(selectedPropale.output);
+  game.nbInvestisseurs++;
   document.getElementById("investisseurs").textContent = game.nbInvestisseurs;
   game.tour++;
 
@@ -90,6 +104,40 @@ function acheter() {
   propale1Element.classList.remove("selected");
   propale2Element.classList.remove("selected");
 
+  evenement();
+}
+
+function evenement() {
+  eventElement.style.display = "flex";
+  propalesElement.style.display = "none";
+  acceptPropaleButton.style.display = "none";
+
+  let idx;
+  do {
+    idx = Math.floor(Math.random() * evenements.length);
+  } while (eventsPasses.includes(idx));
+
+  eventsPasses.push(idx);
+
+  currentEvent = evenements[idx];
+
+  eventElement.children[1].textContent = currentEvent.name;
+}
+
+function acceptEvent() {
+  if (currentEvent.mode === "add") {
+    game.biff += parseInt(currentEvent.biff);
+    game.rendement += parseFloat(currentEvent.output);
+  } else if (currentEvent.mode === "divide") {
+    game.biff /= parseInt(currentEvent.biff);
+    game.rendement /= parseFloat(currentEvent.output);
+  } else if (currentEvent.mode === "random") {
+    game.biff += Math.floor(
+      Math.random() *
+        (parseInt(currentEvent.max) - parseInt(currentEvent.min)) +
+        parseInt(currentEvent.min)
+    );
+  }
   nouveauTour();
 }
 
@@ -116,6 +164,7 @@ function endGame() {
 propale1Element.onclick = () => selectPropale1();
 propale2Element.onclick = () => selectPropale2();
 acceptPropaleButton.onclick = () => acheter();
+eventButton.onclick = () => acceptEvent();
 
 // ======================
 // LANCEMENT DU JEU
