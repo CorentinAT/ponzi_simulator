@@ -4,8 +4,9 @@ import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
 const scene = new THREE.Scene();
 scene.background = new THREE.Color(0x000000);
 const elementWidth =
-  window.innerWidth > 900 ? window.innerWidth / 2 : window.innerWidth;
+  window.innerWidth > 900 ? window.innerWidth / 2 : window.innerWidth; // Pour avoir un semblant de responsive
 
+// Définition de l'animation quand la caméra est déplacée via le code
 const cameraAnim = {
   active: false,
   startZ: 0,
@@ -18,6 +19,7 @@ const cameraAnim = {
   duration: 60,
 };
 
+// Attributs de la caméra 3D
 const camera = new THREE.PerspectiveCamera(
   30,
   elementWidth / window.innerHeight,
@@ -30,15 +32,17 @@ const renderer = new THREE.WebGLRenderer({ antialias: true });
 renderer.setSize(elementWidth, window.innerHeight);
 document.getElementById("pyramid").appendChild(renderer.domElement);
 
+// Configuration des contrôles à la souris pour naviguer dans la pyramide
 const controls = new OrbitControls(camera, renderer.domElement);
 controls.enableZoom = true;
 controls.minDistance = 3;
-controls.maxDistance = 5;
+controls.maxDistance = 5; // On ne peut pas beaucoup dézoomer de base pour que l'agrandissement soit plus impressionnant
 controls.autoRotate = true;
 controls.autoRotateSpeed = -1;
 
 let fractalDepth = 0;
 
+// Pyramide par défaut, celle tout en haut
 const fractalPyramid = createFractalPyramid(1, fractalDepth);
 scene.add(fractalPyramid);
 
@@ -48,6 +52,7 @@ function createPyramidGeometry(size) {
 
   const geometry = new THREE.BufferGeometry();
 
+  // Il n'y a pas d'objet pyramide de base dans ThreeJS, on la construit en précisant les coordonnées de ses sommets
   const vertices = new Float32Array([
     -a / 2,
     0,
@@ -67,9 +72,9 @@ function createPyramidGeometry(size) {
   ]);
 
   const indices = [
-    // base
+    // Base
     0, 1, 2, 0, 2, 3,
-    // faces latérales
+    // Faces latérales
     0, 1, 4, 1, 2, 4, 2, 3, 4, 3, 0, 4,
   ];
 
@@ -80,6 +85,7 @@ function createPyramidGeometry(size) {
   return { geometry, height: h };
 }
 
+// Fonction récursive pour faire la pyramide en fonction de la hauteur
 function createFractalPyramid(size, depth, extremity = null) {
   const group = new THREE.Group();
   const h = size * Math.sqrt(0.5);
@@ -95,6 +101,7 @@ function createFractalPyramid(size, depth, extremity = null) {
 
   if (depth > 0) {
     if (step % 3 === 0) {
+      // Tous les 3 rangs, on ne met des pyramides qu'aux extrémités de la structure (c'est cela qui créé les trous dans la pyramide)
       if (extremity === 1) {
         const subPyramid = createFractalPyramid(size, depth - 1);
         subPyramid.position.set(-size / 2, -h, -size / 2);
@@ -113,6 +120,7 @@ function createFractalPyramid(size, depth, extremity = null) {
         group.add(subPyramid);
       }
     } else {
+      // Sinon, on créé une nouvelle tour de pyramides sous chaque sommet de la base de la pyramide actuelle
       const subPyramid1 = createFractalPyramid(
         size,
         depth - 1,
@@ -146,6 +154,7 @@ function createFractalPyramid(size, depth, extremity = null) {
   return group;
 }
 
+// Aussi pour gérer les changements de position de la caméra via le code
 function animate() {
   requestAnimationFrame(animate);
 
@@ -176,26 +185,31 @@ function animate() {
   renderer.render(scene, camera);
 }
 
+// Appelé depuis le script du jeu lui-même, ajoute un étage à la pyramide
 export function nextLevel(turn) {
   let camTranslation = 0;
   let camRecul = 1;
 
   if (turn > 0) {
     if (turn + 1 < 4) {
+      // Pour les 3 premiers tours, on ajoute seulement un étage
       fractalDepth += 1;
       camTranslation = 0.3;
       camRecul = 4;
     } else {
+      // Ensuite, on ajoute un étage complet de pyramides de pyramides (équivalent 3 étages classiques)
       fractalDepth += 3;
       camTranslation = 1;
       camRecul = 10;
     }
   }
 
+  // On met à jour la pyramide affichée
   scene.remove(fractalPyramid);
   const fractalPyramid2 = createFractalPyramid(1, fractalDepth);
   scene.add(fractalPyramid2);
 
+  // On dézoome la caméra et la descend en fonction de la taille de ce qui a été ajouté
   cameraAnim.startZ = camera.position.z;
   cameraAnim.targetZ = camera.position.z + camRecul;
 
