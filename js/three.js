@@ -70,7 +70,7 @@ function createFractalPyramid(size, depth, extremity = null) {
 
   group.add(pyramid);
 
-  const step = FRACTAL_DEPTH - depth + 1;
+  const step = fractalDepth - depth + 1;
 
   if (depth > 0) {
     if (step % 3 === 0) {
@@ -125,10 +125,9 @@ function createFractalPyramid(size, depth, extremity = null) {
   return group;
 }
 
-const INITIAL_SIZE = 1;
-let FRACTAL_DEPTH = 1;
+let fractalDepth = 0;
 
-const fractalPyramid = createFractalPyramid(INITIAL_SIZE, FRACTAL_DEPTH);
+const fractalPyramid = createFractalPyramid(1, fractalDepth);
 scene.add(fractalPyramid);
 
 function animate() {
@@ -137,20 +136,12 @@ function animate() {
   renderer.render(scene, camera);
 }
 
-function unzoom() {
-  FRACTAL_DEPTH += 1;
+export function nextLevel(turn) {
+  fractalDepth += 1;
   scene.remove(fractalPyramid);
-  const fractalPyramid2 = createFractalPyramid(INITIAL_SIZE, FRACTAL_DEPTH);
+  const fractalPyramid2 = createFractalPyramid(1, fractalDepth);
   scene.add(fractalPyramid2);
   animate();
 }
 
-document.getElementById("unzoom").onclick = () => unzoom();
-
 animate();
-
-// window.addEventListener("resize", () => {
-//   camera.aspect = window.innerWidth / window.innerHeight;
-//   camera.updateProjectionMatrix();
-//   renderer.setSize(window.innerWidth, window.innerHeight);
-// });

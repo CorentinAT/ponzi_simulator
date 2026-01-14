@@ -1,8 +1,9 @@
 import investisseurs from "../json/investisseurs.json";
-
-let pyramid = [];
+import { nextLevel } from "./three";
 
 let selectedPropale = null;
+
+let tour = 1;
 
 const propale1Element = document.getElementById("propale1");
 const propale2Element = document.getElementById("propale2");
@@ -20,13 +21,6 @@ const game = {
 
 let propale1 = null;
 let propale2 = null;
-
-// ======================
-// UTILITAIRES
-// ======================
-function randomInt(min, max) {
-  return Math.floor(Math.random() * (max - min + 1)) + min;
-}
 
 // ======================
 // AFFICHAGE
@@ -63,6 +57,10 @@ function nouveauTour() {
 
   propale1 = investisseurs[idx1];
   propale2 = investisseurs[idx2];
+
+  tour++;
+
+  nextLevel(tour);
 
   majStats();
   afficherPropositions();
