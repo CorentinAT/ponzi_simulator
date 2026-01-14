@@ -3,7 +3,7 @@ import { nextLevel } from "./three";
 
 let selectedPropale = null;
 
-let tour = 1;
+let tour = 0;
 
 const propale1Element = document.getElementById("propale1");
 const propale2Element = document.getElementById("propale2");
@@ -61,9 +61,9 @@ function nouveauTour() {
   propale1 = investisseurs[idx1];
   propale2 = investisseurs[idx2];
 
-  tour++;
-
   nextLevel(tour);
+
+  tour++;
 
   majStats();
   afficherPropositions();

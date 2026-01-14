@@ -4,20 +4,34 @@ import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
 const scene = new THREE.Scene();
 scene.background = new THREE.Color(0xffffff);
 
+const cameraAnim = {
+  active: false,
+  startZ: 0,
+  targetZ: 0,
+
+  startTargetY: 0,
+  targetTargetY: 0,
+
+  progress: 0,
+  duration: 60,
+};
+
 const camera = new THREE.PerspectiveCamera(
   30,
-  window.innerWidth / 2 / (window.innerHeight * 0.8),
+  window.innerWidth / 2 / window.innerHeight,
   0.1,
   1000
 );
 camera.position.z = 3;
 
 const renderer = new THREE.WebGLRenderer({ antialias: true });
-renderer.setSize(window.innerWidth / 2, window.innerHeight * 0.8);
+renderer.setSize(window.innerWidth / 2, window.innerHeight);
 document.getElementById("pyramid").appendChild(renderer.domElement);
 
 const controls = new OrbitControls(camera, renderer.domElement);
 controls.enableZoom = true;
+controls.minDistance = 3;
+controls.maxDistance = 6;
 
 function createPyramidGeometry(size) {
   const a = size;
@@ -26,7 +40,6 @@ function createPyramidGeometry(size) {
   const geometry = new THREE.BufferGeometry();
 
   const vertices = new Float32Array([
-    // base (carré)
     -a / 2,
     0,
     -a / 2,
@@ -39,7 +52,6 @@ function createPyramidGeometry(size) {
     -a / 2,
     0,
     a / 2,
-    // sommet
     0,
     h,
     0,
@@ -132,16 +144,64 @@ scene.add(fractalPyramid);
 
 function animate() {
   requestAnimationFrame(animate);
+
+  if (cameraAnim.active) {
+    cameraAnim.progress++;
+
+    const t = cameraAnim.progress / cameraAnim.duration;
+    const smoothT = t * t * (3 - 2 * t); // smoothstep
+
+    camera.position.z = THREE.MathUtils.lerp(
+      cameraAnim.startZ,
+      cameraAnim.targetZ,
+      smoothT
+    );
+
+    controls.target.y = THREE.MathUtils.lerp(
+      cameraAnim.startTargetY,
+      cameraAnim.targetTargetY,
+      smoothT
+    );
+
+    if (t >= 1) {
+      cameraAnim.active = false;
+    }
+  }
+
   controls.update();
   renderer.render(scene, camera);
 }
 
 export function nextLevel(turn) {
-  fractalDepth += 1;
+  let camTranslation = 0;
+  let camRecul = 1;
+
+  if (turn > 0) {
+    if (turn + 1 < 4) {
+      fractalDepth += 1;
+      camTranslation = 0.3;
+      camRecul = 3;
+    } else {
+      fractalDepth += 3;
+      camTranslation = 1;
+      camRecul = 10;
+    }
+  }
+
   scene.remove(fractalPyramid);
   const fractalPyramid2 = createFractalPyramid(1, fractalDepth);
   scene.add(fractalPyramid2);
-  animate();
+
+  cameraAnim.startZ = camera.position.z;
+  cameraAnim.targetZ = camera.position.z + camRecul;
+
+  cameraAnim.startTargetY = controls.target.y;
+  cameraAnim.targetTargetY = controls.target.y - camTranslation;
+
+  cameraAnim.progress = 0;
+  cameraAnim.active = true;
+
+  controls.maxDistance = controls.maxDistance + camRecul;
 }
 
 animate();
