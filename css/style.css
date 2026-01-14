@@ -58,6 +58,10 @@ button.disabled {
   opacity: 70%;
 }
 
+#describe {
+  margin: 20px;
+}
+
 #game {
   display: flex;
   align-items: center;
@@ -80,6 +84,7 @@ button.disabled {
   align-items: center;
   width: 90%;
   margin: 0 auto;
+  padding: 20px;
 }
 
 #skip-event {

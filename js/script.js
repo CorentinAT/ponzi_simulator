@@ -52,13 +52,11 @@ function nouveauTour() {
 
   descriptionElement.textContent = "";
 
-  acceptPropaleButton.classList.add("disabled");
-
   eventElement.style.display = "none";
+  acceptPropaleButton.style.display = "none";
   descriptionElement.style.display = "initial";
   propalesTextElement.style.display = "initial";
   propalesElement.style.display = "flex";
-  acceptPropaleButton.style.display = "flex";
 
   game.biff *= game.rendement;
 
@@ -82,7 +80,9 @@ function nouveauTour() {
 function acheter() {
   if (game.biff < selectedPropale.cost) {
     game.enCours = false;
-    alert("Game over : plus assez de biff");
+    alert(
+      "Game over : plus assez de biff, vous avez été trop gourmand et avez tout perdu"
+    );
     window.location.reload();
     return;
   }
@@ -144,7 +144,7 @@ function acceptEvent() {
 }
 
 function selectPropale1() {
-  acceptPropaleButton.classList.remove("disabled");
+  acceptPropaleButton.style.display = "initial";
   propale1Element.classList.add("selected");
   selectedPropale = propale1;
   propale2Element.classList.remove("selected");
@@ -152,7 +152,7 @@ function selectPropale1() {
 }
 
 function selectPropale2() {
-  acceptPropaleButton.classList.remove("disabled");
+  acceptPropaleButton.style.display = "initial";
   propale2Element.classList.add("selected");
   selectedPropale = propale2;
   propale1Element.classList.remove("selected");
