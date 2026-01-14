@@ -3,6 +3,8 @@ import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
 
 const scene = new THREE.Scene();
 scene.background = new THREE.Color(0x000000);
+const elementWidth =
+  window.innerWidth > 900 ? window.innerWidth / 2 : window.innerWidth;
 
 const cameraAnim = {
   active: false,
@@ -18,14 +20,14 @@ const cameraAnim = {
 
 const camera = new THREE.PerspectiveCamera(
   30,
-  window.innerWidth / 2 / window.innerHeight,
+  elementWidth / window.innerHeight,
   0.1,
   1000
 );
 camera.position.z = 3;
 
 const renderer = new THREE.WebGLRenderer({ antialias: true });
-renderer.setSize(window.innerWidth / 2, window.innerHeight);
+renderer.setSize(elementWidth, window.innerHeight);
 document.getElementById("pyramid").appendChild(renderer.domElement);
 
 const controls = new OrbitControls(camera, renderer.domElement);
