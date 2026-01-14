@@ -152,8 +152,7 @@
     "mode": "add",
     "biff": -450,
     "output": 0.0
-  }
-  ,
+  },
   {
     "id": 23,
     "name": "Get pranked, ça tourne bien ! +450 biff",
@@ -173,14 +172,14 @@
     "name": "Addiction aux médicaments : -10% rendement",
     "mode": "add",
     "biff": 0,
-    "output": -0.10
+    "output": -0.1
   },
   {
     "id": 26,
     "name": "Addiction au cannabis : -10% rendement",
     "mode": "add",
     "biff": 0,
-    "output": -0.10
+    "output": -0.1
   },
   {
     "id": 27,
@@ -194,20 +193,20 @@
     "name": "Bad buzz : C'est de la diffamation ! +1000 biff, -20%",
     "mode": "add",
     "biff": 1000,
-    "output": -0.20
+    "output": -0.2
   },
   {
     "id": 29,
     "name": "Squatteurs dans les locaux : ils piquent dans les caisses quand vous n'êtes pas là, -10% rendement.",
     "mode": "add",
     "biff": 0,
-    "output": -0.10
+    "output": -0.1
   },
   {
     "id": 30,
-    "name": "Bénédiction de Ploutos :",
+    "name": "Bénédiction de Ploutos : votre rendement est miraculeusement doublé",
     "mode": "divide",
-    "biff": 0,
+    "biff": 1,
     "output": 0.5
   }
 ]
