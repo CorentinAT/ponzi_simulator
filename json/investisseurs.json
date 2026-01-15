@@ -481,7 +481,7 @@
     "name": "Marc",
     "bag": 400,
     "cost": 100,
-    "output": -0.1,
+    "output": -0.01,
     "text": "Marc coûte 100 biff et arrive avec un capital de 400 biff. Ses idées Marxistes l'empêchent de s'impliquer dans l'activité de l'organisation. Baisse du rendement de 1%.",
     "upgrade_id": 1
   },
