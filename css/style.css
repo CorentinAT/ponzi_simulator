@@ -156,6 +156,14 @@ button.disabled {
   h1 {
     text-align: center;
   }
+
+  #propales-text {
+    text-align: center;
+  }
+
+  #start {
+    margin-bottom: 50px;
+  }
 }
 
 @media screen and (min-width: 901px) {
