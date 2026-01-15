@@ -232,8 +232,7 @@
     "output": -0.05,
     "text": "Julie coûte 800 biff et arrive avec un capital de 1000 biff. Baisse du rendement de 10%.",
     "upgrade_id": 1
-  }
-  ,
+  },
   {
     "id": 27,
     "name": "Mila",
@@ -296,8 +295,7 @@
     "output": 0.07,
     "text": "Justine coûte 800 biff et arrive avec un capital de 1000 biff. Elle te fait un emploi du temps tout propre, baisse du rendement de 7%.",
     "upgrade_id": 1
-  }
-  ,
+  },
   {
     "id": 34,
     "name": "Lucille",
@@ -323,6 +321,78 @@
     "cost": 200,
     "output": -0.2,
     "text": "Roméo coûte 200 biff et arrive avec un capital de 1000 biff. Il instaure l'anarchie dans l'entreprise, baisse du rendement de 20%",
+    "upgrade_id": 1
+  },
+  {
+    "id": 37,
+    "name": "Guillaume",
+    "bag": 0,
+    "cost": 700,
+    "output": 0.1,
+    "text": "Guillaume coûte 700 biff. Il ne rapporte pas de biff parce qu'il a payé une carte graphique pour faire du blender mais augmente le rendement de 10%",
+    "upgrade_id": 1
+  },
+  {
+    "id": 38,
+    "name": "Killian",
+    "bag": 200,
+    "cost": 400,
+    "output": -0.05,
+    "text": "Killian coûte 400 biff et arrive avec un capital de 200 biff. Ses sites web ne se vendent pas, baisse du rendement de 5%.",
+    "upgrade_id": 1
+  },
+  {
+    "id": 39,
+    "name": "Imane",
+    "bag": 100,
+    "cost": 500,
+    "output": 0.03,
+    "text": "Imane coûte 500 biff et arrive avec un capital de 100 biff. Ses compétences sur After Effects augmente le rendement de 3%.",
+    "upgrade_id": 1
+  },
+  {
+    "id": 40,
+    "name": "Louise",
+    "bag": 600,
+    "cost": 600,
+    "output": -0.05,
+    "text": "Louise coûte 600 biff et arrive avec un capital de 600 biff. Mais les performances misérables de son microsoft surface baissent le rendement de 5%.",
+    "upgrade_id": 1
+  },
+  {
+    "id": 41,
+    "name": "Quentin",
+    "bag": 1500,
+    "cost": 700,
+    "output": 0,
+    "text": "Quentin coûte 700 biff et investit toute la trésorerie du GIC, +1500 biff.",
+    "upgrade_id": 1
+  },
+  {
+    "id": 42,
+    "name": "Honorine",
+    "bag": 300,
+    "cost": 500,
+    "output": 0.15,
+    "text": "Honorine coûte 500 biff et arrive avec un capital de 300 biff. Elle te met dans le mail hebdo de l'école, augmentation du rendement de 15%.",
+    "upgrade_id": 1
+  },
+  {
+    "id": 43,
+    "name": "Ilyass",
+    "bag": 300,
+    "cost": 600,
+    "output": -0.15,
+    "text": "Ilyass coûte 600 biff et arrive avec un capital de 300 biff. Il casse les oreilles de tout le monde en jouant de l'oud en boucle. Rendement -15%.",
+    "upgrade_id": 1
+  },
+  {
+    "id": 44,
+    "name": "Pauline",
+    "bag": 0,
+    "cost": 200,
+    "output": -0.1,
+    "text": "Pauline coûte 200 biff. Elle passe son temps à compter combien d'objectif 35mm f2.8 803z a dans son placard. Baisse du rendement de 10%.",
     "upgrade_id": 1
   }
 ]
