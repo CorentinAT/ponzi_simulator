@@ -361,7 +361,7 @@
   },
   {
     "id": 41,
-    "name": "Quentin",
+    "name": "Quentin B.",
     "bag": 1500,
     "cost": 700,
     "output": 0,
@@ -393,6 +393,60 @@
     "cost": 200,
     "output": -0.1,
     "text": "Pauline coûte 200 biff. Elle passe son temps à compter combien d'objectif 35mm f2.8 803z a dans son placard. Baisse du rendement de 10%.",
+    "upgrade_id": 1
+  },
+  {
+    "id": 45,
+    "name": "Quentin L.",
+    "bag": 0,
+    "cost": 800,
+    "output": 0,
+    "text": "Quentin coûte 800 biff. Il vous demande de payer son opération du pouce.",
+    "upgrade_id": 1
+  },
+  {
+    "id": 46,
+    "name": "Emmanuel Macron",
+    "bag": 4000,
+    "cost": 2000,
+    "output": -0.4,
+    "text": "Emmanuel Macron coûte 2000 biff et arrive avec le capital du parti Renaissance (4000 biff), baisse du rendement de 40%. ",
+    "upgrade_id": 1
+  },
+  {
+    "id": 47,
+    "name": "Leo",
+    "bag": 100,
+    "cost": 500,
+    "output": -0.1,
+    "text": "Leo coûte 500 biff et arrive avec un capital de 100 biff. Baisse du rendement de 10%.",
+    "upgrade_id": 1
+  },
+  {
+    "id": 48,
+    "name": "Guilhem",
+    "bag": 0,
+    "cost": 400,
+    "output": -0.1,
+    "text": "Guilhem coûte 400 biff. Guimii music n'est pas encore assez rentable, -10% rendement.",
+    "upgrade_id": 1
+  },
+  {
+    "id": 49,
+    "name": "Chevreuil",
+    "bag": 2200,
+    "cost": 1400,
+    "output": 0.1,
+    "text": "Chevreuil coûte 1400 biff et arrive avec un capital de 2200 biff. Il reconnait les équations caractéristiques de la bourse, 10% de rendement.",
+    "upgrade_id": 1
+  },
+  {
+    "id": 50,
+    "name": "Arthur",
+    "bag": 1600,
+    "cost": 400,
+    "output": -0.2,
+    "text": "Arthur coûte 400 biff et arrive avec un capital de 1600 biff. Sa boîte de nuit : 'Le trashcan', croule sous les dettes, -20% rendement. ",
     "upgrade_id": 1
   }
 ]
