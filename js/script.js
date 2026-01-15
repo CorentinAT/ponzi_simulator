@@ -2,6 +2,8 @@ import investisseurs from "../json/investisseurs.json";
 import evenements from "../json/events.json";
 import { nextLevel } from "./three";
 
+const NB_TOURS = 7;
+
 let tour = 0;
 
 let propale1 = null;
@@ -47,10 +49,6 @@ function afficherPropositions() {
 }
 
 function nouveauTour() {
-  if (game.tour > 7) {
-    endGame();
-    return;
-  }
   if (!game.enCours) return;
 
   // On affiche seulement les éléments relatifs aux propositions
@@ -106,6 +104,11 @@ function acheter() {
   propale1Element.classList.remove("selected");
   propale2Element.classList.remove("selected");
 
+  if (game.tour > NB_TOURS) {
+    majStats();
+    endGame();
+    return;
+  }
   evenement();
 }
 
@@ -175,7 +178,9 @@ function selectPropale2() {
 // Victoire d'une partie, on affiche le résultat
 function endGame() {
   alert(
-    "Vous avez survécu 7 tours, vous lâchez tout et partez du pays avec " +
+    "Bien joué ! Vous avez survécu " +
+      NB_TOURS +
+      " tours, vous lâchez tout et partez du pays avec " +
       parseInt(game.biff) +
       " biff"
   );
