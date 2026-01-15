@@ -2,7 +2,7 @@ import investisseurs from "../json/investisseurs.json";
 import evenements from "../json/events.json";
 import { nextLevel } from "./three";
 
-const NB_TOURS = 7;
+const NB_TOURS = 14;
 
 let tour = 0;
 
@@ -27,7 +27,7 @@ const propalesTextElement = document.getElementById("propales-text");
 
 // Attributs au lancement de la partie
 const game = {
-  biff: 900,
+  biff: 1000,
   rendement: 1.1,
   tour: 1,
   nbInvestisseurs: 0,

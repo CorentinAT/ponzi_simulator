@@ -1,6 +1,8 @@
 import * as THREE from "three";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
 
+const spheresElement = document.getElementById("spheres");
+
 const scene = new THREE.Scene();
 scene.background = new THREE.Color(0x000000);
 const elementWidth =
@@ -42,6 +44,9 @@ controls.autoRotate = true;
 controls.autoRotateSpeed = -1;
 
 let fractalDepth = 0;
+
+let color = 0x00ff00;
+let pyramidSize = 1;
 
 // Pyramide par défaut, celle tout en haut
 const fractalPyramid = createFractalPyramid(1, fractalDepth);
@@ -93,12 +98,12 @@ function createFractalPyramid(size, depth, extremity = null) {
 
   const { geometry } = createPyramidGeometry(size);
   const edges = new THREE.EdgesGeometry(geometry);
-  const lineMaterial = new THREE.LineBasicMaterial({ color: 0x00ff00 });
+  const lineMaterial = new THREE.LineBasicMaterial({ color });
   const pyramid = new THREE.LineSegments(edges, lineMaterial);
 
   group.add(pyramid);
 
-  const step = fractalDepth - depth + 1;
+  let step = fractalDepth - depth + 1;
 
   if (depth > 0) {
     if (step % 3 === 0) {
@@ -191,14 +196,39 @@ export function nextLevel(turn) {
   let camTranslation = 0;
   let camRecul = 1;
 
+  let controlTargetY = controls.target.y;
+  let cameraPositionZ = camera.position.z;
+
   if (turn > 0) {
-    if (turn + 1 < 4) {
+    if (turn % 7 === 0) {
+      // À partir du tour 7, on recommence à la taille 1 et on change la couleur
+      color = 0xefbf04;
+      document.documentElement.style.setProperty(
+        "--primary-color",
+        "rgb(239, 191, 4)"
+      );
+      document.documentElement.style.setProperty(
+        "--primary-background",
+        "rgba(239, 191, 4, 0.239)"
+      );
+      fractalDepth = 0;
+      camTranslation = 0.3;
+      camRecul = 4;
+      controlTargetY = 1;
+      cameraPositionZ = 3;
+      controls.maxDistance = 5;
+      spheresElement.children[0].classList.remove("active");
+      const newSphereElement = document.createElement("div");
+      newSphereElement.classList.add("sphere", "active");
+      newSphereElement.style.backgroundColor = "#efbf04";
+      spheresElement.appendChild(newSphereElement);
+    } else if (turn % 7 < 3) {
       // Pour les 3 premiers tours, on ajoute seulement un étage
       fractalDepth += 1;
       camTranslation = 0.3;
       camRecul = 4;
     } else {
-      // Ensuite, on ajoute un étage complet de pyramides de pyramides (équivalent 3 étages classiques)
+      // Sinon, on ajoute un étage complet de pyramides de pyramides (équivalent 3 étages classiques)
       fractalDepth += 3;
       camTranslation = 1;
       camRecul = 10;
@@ -206,16 +236,16 @@ export function nextLevel(turn) {
   }
 
   // On met à jour la pyramide affichée
-  scene.remove(fractalPyramid);
-  const fractalPyramid2 = createFractalPyramid(1, fractalDepth);
+  scene.clear();
+  const fractalPyramid2 = createFractalPyramid(pyramidSize, fractalDepth);
   scene.add(fractalPyramid2);
 
   // On dézoome la caméra et la descend en fonction de la taille de ce qui a été ajouté
-  cameraAnim.startZ = camera.position.z;
-  cameraAnim.targetZ = camera.position.z + camRecul;
+  cameraAnim.startZ = cameraPositionZ;
+  cameraAnim.targetZ = cameraPositionZ + camRecul;
 
-  cameraAnim.startTargetY = controls.target.y;
-  cameraAnim.targetTargetY = controls.target.y - camTranslation;
+  cameraAnim.startTargetY = controlTargetY;
+  cameraAnim.targetTargetY = controlTargetY - camTranslation;
 
   cameraAnim.progress = 0;
   cameraAnim.active = true;
