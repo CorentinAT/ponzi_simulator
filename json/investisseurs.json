@@ -448,5 +448,68 @@
     "output": -0.2,
     "text": "Arthur coûte 400 biff et arrive avec un capital de 1600 biff. Sa boîte de nuit : 'Le trashcan', croule sous les dettes, -20% rendement. ",
     "upgrade_id": 1
+  },
+  {
+    "id": 51,
+    "name": "Astrid",
+    "bag": 500,
+    "cost": 300,
+    "output": -0.03,
+    "text": "Astrid coûte 300 biff et arrive avec un capital de 500 biff. Les mots de passe de son application de secret santa ont fuité, baisse du rendement de 3%.",
+    "upgrade_id": 1
+  },
+  {
+    "id": 52,
+    "name": "Elouan R",
+    "bag": 700,
+    "cost": 700,
+    "output": -0.02,
+    "text": "Elouan coûte 700 biff et arrive avec un capital de 700 biff. Il se perd pendant l'UTMB, vous devez payer ses recherches. Baisse du rendement de 2%.",
+    "upgrade_id": 1
+  },
+  {
+    "id": 53,
+    "name": "Aimé",
+    "bag": 300,
+    "cost": 1200,
+    "output": 0.2,
+    "text": "Imane coûte 1200 biff et arrive avec un capital de 300 biff. Son esprit de jeune entrepreneur augmente le rendement de 20%.",
+    "upgrade_id": 1
+  },
+  {
+    "id": 54,
+    "name": "Marc",
+    "bag": 400,
+    "cost": 100,
+    "output": -0.1,
+    "text": "Marc coûte 100 biff et arrive avec un capital de 400 biff. Ses idées Marxistes l'empêchent de s'impliquer dans l'activité de l'organisation. Baisse du rendement de 1%.",
+    "upgrade_id": 1
+  },
+  {
+    "id": 55,
+    "name": "Clément",
+    "bag": 0,
+    "cost": 800,
+    "output": 0,
+    "text": "Clément coûte 800 biff mais claque tout dans un iPhone 16 pro max 1 to. Ne rapporte rien.",
+    "upgrade_id": 1
+  },
+  {
+    "id": 56,
+    "name": "Octave",
+    "bag": 600,
+    "cost": 500,
+    "output": -0.1,
+    "text": "Octave coûte 500 biff et arrive avec un capital de 600 biff. Sa livraison hebdomadaire de palettes de Redbull baisse le rendement de 10%.",
+    "upgrade_id": 1
+  },
+  {
+    "id": 57,
+    "name": "Xavier",
+    "bag": 700,
+    "cost": 900,
+    "output": 0.08,
+    "text": "Xavier coûte 900 biff et arrive avec un capital de 700 biff. Il fait un graphe des données de l'organisation pour optimiser ses performances. Rendement +8%.",
+    "upgrade_id": 1
   }
 ]
