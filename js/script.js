@@ -139,7 +139,7 @@ function acceptEvent() {
     game.biff += parseInt(currentEvent.biff);
     game.rendement += parseFloat(currentEvent.output);
   } else if (currentEvent.mode === "divide") {
-    game.biff = Math.floor(game.biff / parseInt(currentEvent.biff));
+    game.biff = Math.floor(game.biff / parseFloat(currentEvent.biff));
     game.rendement /= parseFloat(currentEvent.output);
   } else if (currentEvent.mode === "random") {
     const resultatCasino = Math.floor(
