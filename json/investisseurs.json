@@ -19,7 +19,7 @@
   },
   {
     "id": 3,
-    "name": "Elouan",
+    "name": "Elouan L",
     "bag": 100,
     "cost": 600,
     "output": 0.05,
@@ -320,7 +320,7 @@
     "bag": 1000,
     "cost": 200,
     "output": -0.2,
-    "text": "Roméo coûte 200 biff et arrive avec un capital de 1000 biff. Il instaure l'anarchie dans l'entreprise, baisse du rendement de 20%",
+    "text": "Roméo coûte 200 biff et arrive avec un capital de 1000 biff. Il instaure l'anarchie dans l'entreprise, baisse du rendement de 20%.",
     "upgrade_id": 1
   },
   {
@@ -329,7 +329,7 @@
     "bag": 0,
     "cost": 700,
     "output": 0.1,
-    "text": "Guillaume coûte 700 biff. Il ne rapporte pas de biff parce qu'il a payé une carte graphique pour faire du blender mais augmente le rendement de 10%",
+    "text": "Guillaume coûte 700 biff. Il ne rapporte pas de biff parce qu'il a payé une carte graphique pour faire du blender mais augmente le rendement de 10%.",
     "upgrade_id": 1
   },
   {
@@ -373,8 +373,8 @@
     "name": "Honorine",
     "bag": 300,
     "cost": 500,
-    "output": 0.15,
-    "text": "Honorine coûte 500 biff et arrive avec un capital de 300 biff. Elle te met dans le mail hebdo de l'école, augmentation du rendement de 15%.",
+    "output": 0.04,
+    "text": "Honorine coûte 500 biff et arrive avec un capital de 300 biff. Elle te met dans le mail hebdo de l'école, augmentation du rendement de 4%.",
     "upgrade_id": 1
   },
   {
