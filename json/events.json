@@ -235,7 +235,7 @@
     "name": "Crash Boursier : vous vendez toutes vos actions, +3000 biff, -40% rendement",
     "mode": "add",
     "biff": 3000,
-    "output": 0.4
+    "output": -0.4
   },
   {
     "id": 35,
