@@ -1,7 +1,7 @@
 [
   {
     "id": 1,
-    "name": "Braquage de banque : vous gagnez 500 biff",
+    "name": "Braquage de banque : vous gagnez 800 biff",
     "mode": "add",
     "biff": 800,
     "output": 0.0

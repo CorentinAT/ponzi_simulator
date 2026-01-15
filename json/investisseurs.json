@@ -46,11 +46,11 @@
   },
   {
     "id": 6,
-    "name": "Mathieu",
+    "name": "Matthieu",
     "bag": 400,
     "cost": 200,
     "output": 0.0,
-    "text": "Mathieu coûte 200 biff mais rapporte 400 biff grâce à son business de cartes Pokémon.",
+    "text": "Matthieu coûte 200 biff mais rapporte 400 biff grâce à son business de cartes Pokémon.",
     "upgrade_id": 1
   },
   {
