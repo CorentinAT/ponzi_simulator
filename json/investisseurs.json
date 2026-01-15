@@ -11,10 +11,10 @@
   {
     "id": 2,
     "name": "Léna",
-    "bag": 500,
+    "bag": 600,
     "cost": 400,
     "output": -0.04,
-    "text": "Léna coûte 400 biff et arrive avec un capital de 400 biff. Cependant elle baisse le rendement de 4%.",
+    "text": "Léna coûte 400 biff et arrive avec un capital de 600 biff. Cependant elle baisse le rendement de 4%.",
     "upgrade_id": 1
   },
   {
@@ -38,10 +38,10 @@
   {
     "id": 5,
     "name": "Yanis",
-    "bag": 100,
+    "bag": 200,
     "cost": 1000,
-    "output": 0.08,
-    "text": "Yanis coûte 1000 biff et arrive avec un capital de 100 biff. Il augmente le rendement de 8%.",
+    "output": 0.12,
+    "text": "Yanis coûte 1000 biff et arrive avec un capital de 200 biff. Il augmente le rendement de 12%.",
     "upgrade_id": 1
   },
   {
@@ -76,7 +76,7 @@
     "name": "Alina",
     "bag": 100,
     "cost": 700,
-    "output": 0.02,
+    "output": 0.04,
     "text": "Alina coûte 700 biff et arrive avec un capital de 100 biff. Elle augmente le rendement de 2%.",
     "upgrade_id": 1
   },
@@ -86,7 +86,7 @@
     "bag": 100,
     "cost": 200,
     "output": -0.12,
-    "text": "Alex Grosdidier coûte 200 biff et arrive avec un capital de 100 biff. Cependant, il baisse le rendement de 12%, c'est un mauvais investisseur.",
+    "text": "Alex coûte 200 biff et arrive avec un capital de 100 biff. Cependant, il baisse le rendement de 12%, c'est un mauvais investisseur.",
     "upgrade_id": 1
   },
   {
@@ -173,19 +173,19 @@
   {
     "id": 20,
     "name": "Qays",
-    "bag": 200,
+    "bag": 600,
     "cost": 800,
     "output": -0.05,
-    "text": "Qays coûte 800 biff et arrive avec un capital de 200 biff. Baisse du rendement de 4%.",
+    "text": "Qays coûte 800 biff et arrive avec un capital de 600 biff. Baisse du rendement de 5%.",
     "upgrade_id": 1
   },
   {
     "id": 21,
     "name": "Jules",
-    "bag": 100,
+    "bag": 300,
     "cost": 500,
     "output": -0.1,
-    "text": "Jules coûte 500 biff et arrive avec un capital de 100 biff. Il te fait un tunnel en parlant de CoolLab, baisse du rendement de 10%.",
+    "text": "Jules coûte 500 biff et arrive avec un capital de 300 biff. Il te fait un tunnel en parlant de CoolLab, baisse du rendement de 10%.",
     "upgrade_id": 1
   },
   {
@@ -346,8 +346,8 @@
     "name": "Imane",
     "bag": 100,
     "cost": 500,
-    "output": 0.03,
-    "text": "Imane coûte 500 biff et arrive avec un capital de 100 biff. Ses compétences sur After Effects augmente le rendement de 3%.",
+    "output": 0.06,
+    "text": "Imane coûte 500 biff et arrive avec un capital de 100 biff. Ses compétences sur After Effects augmente le rendement de 6%.",
     "upgrade_id": 1
   },
   {
@@ -473,7 +473,7 @@
     "bag": 300,
     "cost": 1200,
     "output": 0.2,
-    "text": "Imane coûte 1200 biff et arrive avec un capital de 300 biff. Son esprit de jeune entrepreneur augmente le rendement de 20%.",
+    "text": "Aimé coûte 1200 biff et arrive avec un capital de 300 biff. Son esprit de jeune entrepreneur augmente le rendement de 20%.",
     "upgrade_id": 1
   },
   {

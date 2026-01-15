@@ -3,7 +3,7 @@
     "id": 1,
     "name": "Braquage de banque : vous gagnez 500 biff",
     "mode": "add",
-    "biff": 500,
+    "biff": 800,
     "output": 0.0
   },
   {
@@ -208,5 +208,40 @@
     "mode": "divide",
     "biff": 1,
     "output": 0.5
+  },
+  {
+    "id": 31,
+    "name": "Malédiction de Ploutos : votre rendement est catastrophiquement réduit de moitié",
+    "mode": "divide",
+    "biff": 1,
+    "output": 2
+  },
+  {
+    "id": 32,
+    "name": "Intervention divine : un petit coup de pouce des cieux, +25% biff et rendement multiplié par 25%",
+    "mode": "divide",
+    "biff": 0.75,
+    "output": 0.75
+  },
+  {
+    "id": 33,
+    "name": "Grand remplacement : on vous avait prévu, -500 biff et +25% rendement",
+    "mode": "add",
+    "biff": -500,
+    "output": 0.25
+  },
+  {
+    "id": 34,
+    "name": "Crash Boursier : vous vendez toutes vos actions, +3000 biff, -40% rendement",
+    "mode": "add",
+    "biff": 3000,
+    "output": 0.4
+  },
+  {
+    "id": 35,
+    "name": "Vous jouez à la roulette russe ! J'espère que vous savez ce que vous faites...",
+    "mode": "random",
+    "min": -1000,
+    "max": 500
   }
 ]
