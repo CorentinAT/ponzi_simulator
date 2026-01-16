@@ -1,0 +1,282 @@
+[
+  {
+    "id": 1,
+    "nom": "Braquage de banque : vous gagnez {biff} biff",
+    "mode": "add",
+    "biff": 800,
+    "rendement": 0.0,
+    "tier": 1
+  },
+  {
+    "id": 2,
+    "nom": "Stonks : +{rendement}% rendement",
+    "mode": "add",
+    "biff": 0,
+    "rendement": 0.1,
+    "tier": 1
+  },
+  {
+    "id": 3,
+    "nom": "Not stonks : -{rendement}% rendement",
+    "mode": "add",
+    "biff": 0,
+    "rendement": -0.1,
+    "tier": 1
+  },
+  {
+    "id": 4,
+    "nom": "Héritage : Vous récupérez {biff} biff de Mamie, paix à son âme, mais vous payez {rendement}% de frais de notaire",
+    "mode": "add",
+    "biff": 1500,
+    "rendement": -0.2,
+    "tier": 1
+  },
+  {
+    "id": 5,
+    "nom": "Liquidation : votre boîte coule à cause de vos investissements catastrophiques, biff divisé par {biff}",
+    "mode": "divide",
+    "biff": 4,
+    "rendement": 1,
+    "tier": 2
+  },
+  {
+    "id": 6,
+    "nom": "Euromillion : +{biff} biff, mais les impôts sont à vos trousses, -{rendement}%.",
+    "mode": "add",
+    "biff": 3000,
+    "rendement": -0.3,
+    "tier": 1
+  },
+  {
+    "id": 7,
+    "nom": "Hack général : plus rien ne marche, rendement divisé par {rendement}.",
+    "mode": "divide",
+    "biff": 1,
+    "rendement": 2,
+    "tier": 2
+  },
+  {
+    "id": 8,
+    "nom": "Racket organisé : vous rackettez un collégien et lui volez sa puff, +{biff} biff.",
+    "mode": "add",
+    "biff": 200,
+    "rendement": 0.0,
+    "tier": 1
+  },
+  {
+    "id": 9,
+    "nom": "Coup de pub : votre fond d'investissement est partagé sur la chaîne CNews, +{rendement}% rendement",
+    "mode": "add",
+    "biff": 0,
+    "rendement": 0.2,
+    "tier": 1
+  },
+  {
+    "id": 10,
+    "nom": "OnlyFans : le OnlyFans de votre soeur génère un revenu régulier, bien joué à elle, +{rendement}% rendement.",
+    "mode": "add",
+    "biff": 0,
+    "rendement": 0.1,
+    "tier": 1
+  },
+  {
+    "id": 11,
+    "nom": "Petit business : vous arnaquez un type dans la rue au jeu de Dé, +{biff} biff.",
+    "mode": "add",
+    "biff": 300,
+    "rendement": 0.0,
+    "tier": 1
+  },
+  {
+    "id": 12,
+    "nom": "Pass de combat : les skins coûtent vraiment cher, -{rendement}% rendement.",
+    "mode": "add",
+    "biff": 0,
+    "rendement": -0.05,
+    "tier": 1
+  },
+  {
+    "id": 13,
+    "nom": "Vous jouez au Casino ! Evitez de tout mettre sur le rouge ;)",
+    "mode": "random",
+    "min": -600,
+    "max": 600,
+    "tier": 1
+  },
+  {
+    "id": 14,
+    "nom": "Impôts : l'Etat n'apprécie pas votre petit business, -{rendement}% rendement",
+    "mode": "add",
+    "biff": 0,
+    "rendement": -0.1,
+    "tier": 1
+  },
+  {
+    "id": 15,
+    "nom": "URSSAF : Toc toc toc ! -{rendement}%",
+    "mode": "add",
+    "biff": 0,
+    "rendement": -0.2,
+    "tier": 2
+  },
+  {
+    "id": 16,
+    "nom": "La France à Macron : Toutes vos ressources sont divisées par {biff}",
+    "mode": "divide",
+    "biff": 2,
+    "rendement": 2,
+    "tier": 2
+  },
+  {
+    "id": 17,
+    "nom": "Ligaments croisés : {biff} biff de frais d'hôpital",
+    "mode": "add",
+    "biff": -400,
+    "rendement": 0.0,
+    "tier": 1
+  },
+  {
+    "id": 18,
+    "nom": "Cadeau de Mère-grand : +{biff} biff, merci mamie :)",
+    "mode": "add",
+    "biff": 200,
+    "rendement": 0.0,
+    "tier": 1
+  },
+  {
+    "id": 19,
+    "nom": "Addiction à la cigarette : le paquet fumé par jour n'est pas un bon investissement, -{rendement}% rendement",
+    "mode": "add",
+    "biff": 0,
+    "rendement": -0.05,
+    "tier": 1
+  },
+  {
+    "id": 20,
+    "nom": "Assurance : mieux vaut être prudent, -{rendement}% rendement",
+    "mode": "add",
+    "biff": 0,
+    "rendement": -0.1,
+    "tier": 1
+  },
+  {
+    "id": 21,
+    "nom": "Crevaison : {biff} biff pour réparer, et avec l'assurance, -{rendement}% rendement",
+    "mode": "add",
+    "biff": -150,
+    "rendement": -0.1,
+    "tier": 1
+  },
+  {
+    "id": 22,
+    "nom": "Scam : Vous vous faites avoir par un brouteur en provenance du Brésil, -{biff} biff",
+    "mode": "add",
+    "biff": -450,
+    "rendement": 0.0,
+    "tier": 1
+  },
+  {
+    "id": 23,
+    "nom": "Get pranked, ça tourne bien ! +{biff} biff",
+    "mode": "add",
+    "biff": 500,
+    "rendement": 0.0,
+    "tier": 1
+  },
+  {
+    "id": 24,
+    "nom": "Addiction à la cocaïne : la farine est coupée au mur, -{rendement}% rendement",
+    "mode": "add",
+    "biff": 0,
+    "rendement": -0.15,
+    "tier": 1
+  },
+  {
+    "id": 25,
+    "nom": "Addiction aux médicaments : -{rendement}% rendement",
+    "mode": "add",
+    "biff": 0,
+    "rendement": -0.1,
+    "tier": 1
+  },
+  {
+    "id": 26,
+    "nom": "Addiction au cannabis : -{rendement}% rendement",
+    "mode": "add",
+    "biff": 0,
+    "rendement": -0.1,
+    "tier": 1
+  },
+  {
+    "id": 27,
+    "nom": "Rachat de CoolLab : Jules vous cède ses parts en échange de {biff} biff, +{rendement}% rendement",
+    "mode": "add",
+    "biff": -600,
+    "rendement": 0.2,
+    "tier": 1
+  },
+  {
+    "id": 28,
+    "nom": "Bad buzz : C'est de la diffamation ! +{biff} biff, -{rendement}%",
+    "mode": "add",
+    "biff": 1000,
+    "rendement": -0.2,
+    "tier": 1
+  },
+  {
+    "id": 29,
+    "nom": "Squatteurs dans les locaux : ils piquent dans les caisses quand vous n'êtes pas là, -{rendement}% rendement.",
+    "mode": "add",
+    "biff": 0,
+    "rendement": -0.1,
+    "tier": 1
+  },
+  {
+    "id": 30,
+    "nom": "Bénédiction de Ploutos : votre rendement est miraculeusement doublé",
+    "mode": "divide",
+    "biff": 1,
+    "rendement": 0.5,
+    "tier": 2
+  },
+  {
+    "id": 31,
+    "nom": "Malédiction de Ploutos : votre rendement est catastrophiquement réduit de moitié",
+    "mode": "divide",
+    "biff": 1,
+    "rendement": 2,
+    "tier": 2
+  },
+  {
+    "id": 32,
+    "nom": "Intervention divine : un petit coup de pouce des cieux, +25% biff et rendement multiplié par 25%",
+    "mode": "divide",
+    "biff": 0.75,
+    "rendement": 0.75,
+    "tier": 2
+  },
+  {
+    "id": 33,
+    "nom": "Grand remplacement : on vous avait prévenu, -{biff} biff et +{rendement}% rendement",
+    "mode": "add",
+    "biff": -500,
+    "rendement": 0.25,
+    "tier": 2
+  },
+  {
+    "id": 34,
+    "nom": "Crash Boursier : vous vendez toutes vos actions, +{biff} biff, -{rendement}% rendement",
+    "mode": "add",
+    "biff": 3000,
+    "rendement": -0.4,
+    "tier": 2
+  },
+  {
+    "id": 35,
+    "nom": "Vous jouez à la roulette russe ! J'espère que vous savez ce que vous faites...",
+    "mode": "random",
+    "min": -1000,
+    "max": 500,
+    "tier": 2
+  }
+]

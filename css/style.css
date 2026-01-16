@@ -52,7 +52,7 @@ body {
   background-color: var(--primary-background);
 }
 
-.stats {
+#stats {
   display: flex;
   gap: 24px;
 }
@@ -124,8 +124,7 @@ button.disabled {
 }
 
 #titre-event,
-#propale1-name,
-#propale2-name {
+#propales > div > p:first-of-type {
   font-weight: bold;
 }
 

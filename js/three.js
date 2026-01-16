@@ -2,8 +2,6 @@ import * as THREE from "three";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
 import { nextTier } from "./script.js";
 
-const spheresElement = document.getElementById("spheres");
-
 const colors = [
   {
     hex: 0x00ff00,
@@ -24,8 +22,15 @@ const colors = [
     rgba: "rgb(26, 160, 255, 0.239)",
   },
 ];
+
+const spheresElement = document.getElementById("spheres");
+
+let fractalDepth = 0;
+let color = 0x00ff00;
+let pyramidSize = 1;
 let colorIdx = 1;
 
+// Initialisation de la scene 3D
 const scene = new THREE.Scene();
 scene.background = new THREE.Color(0x000000);
 const elementWidth =
@@ -49,7 +54,7 @@ const camera = new THREE.PerspectiveCamera(
   30,
   elementWidth / window.innerHeight,
   0.1,
-  100000
+  100000,
 );
 camera.position.z = 0.3;
 camera.position.y = 0.1;
@@ -65,11 +70,6 @@ controls.minDistance = 3;
 controls.maxDistance = 5; // On ne peut pas beaucoup dézoomer de base pour que l'agrandissement soit plus impressionnant
 controls.autoRotate = true;
 controls.autoRotateSpeed = -1;
-
-let fractalDepth = 0;
-
-let color = 0x00ff00;
-let pyramidSize = 1;
 
 // Pyramide par défaut, celle tout en haut
 const fractalPyramid = createFractalPyramid(1, fractalDepth);
@@ -114,46 +114,13 @@ function createPyramidGeometry(size) {
   return { geometry, height: h };
 }
 
-// Crée les subdivisions triangulaires (style triangle de Pascal) sur une face triangulaire
-// rows = 5 donne 1+2+3+4+5 = 15 sous-triangles
-// Chaque sous-triangle est lui-même subdivisé en 4 sous-sous-triangles (style Sierpinski)
-function createPascalTriangleLines(apex, baseLeft, baseRight, rows = 5) {
+// Mettre des sous-triangles sur les faces de la pyramide du haut quand on a terminé une pyramide pour donner l'impression qu'elle est remplie
+// Cette partie là c'est pas mal de choses déjà faites trouvées sur internet
+function createFakePyramidsLines(apex, baseLeft, baseRight, rows = 5) {
   const points = [];
-
-  // Créer une grille de points sur le triangle
-  // grid[row][col] où row va de 0 (apex) à rows (base)
   const grid = [];
 
-  for (let row = 0; row <= rows; row++) {
-    grid[row] = [];
-    const numPointsInRow = row + 1;
-
-    for (let col = 0; col < numPointsInRow; col++) {
-      // Coordonnées barycentriques
-      const t = row / rows; // distance depuis l'apex (0 = apex, 1 = base)
-
-      if (row === 0) {
-        // Sommet
-        grid[row][col] = apex.clone();
-      } else {
-        // Interpolation le long de la rangée
-        const rowLeftPoint = new THREE.Vector3().lerpVectors(apex, baseLeft, t);
-        const rowRightPoint = new THREE.Vector3().lerpVectors(
-          apex,
-          baseRight,
-          t
-        );
-        const colT = col / row;
-        grid[row][col] = new THREE.Vector3().lerpVectors(
-          rowLeftPoint,
-          rowRightPoint,
-          colT
-        );
-      }
-    }
-  }
-
-  // Fonction pour subdiviser un triangle en traçant les 3 lignes reliant les milieux des côtés
+  // Fonction pour subdiviser un triangle en traçant des lignes
   function subdivideTriangle(v1, v2, v3) {
     const mid12 = new THREE.Vector3().lerpVectors(v1, v2, 0.5);
     const mid23 = new THREE.Vector3().lerpVectors(v2, v3, 0.5);
@@ -163,38 +130,57 @@ function createPascalTriangleLines(apex, baseLeft, baseRight, rows = 5) {
     points.push(mid31.clone(), mid12.clone());
   }
 
-  // Tracer les lignes entre les points (sauf les bords extérieurs)
+  for (let row = 0; row <= rows; row++) {
+    grid[row] = [];
+    const numPointsInRow = row + 1;
+
+    for (let col = 0; col < numPointsInRow; col++) {
+      const t = row / rows;
+
+      if (row === 0) {
+        // Sommet
+        grid[row][col] = apex.clone();
+      } else {
+        const rowLeftPoint = new THREE.Vector3().lerpVectors(apex, baseLeft, t);
+        const rowRightPoint = new THREE.Vector3().lerpVectors(
+          apex,
+          baseRight,
+          t,
+        );
+        const colT = col / row;
+        grid[row][col] = new THREE.Vector3().lerpVectors(
+          rowLeftPoint,
+          rowRightPoint,
+          colT,
+        );
+      }
+    }
+  }
+
   for (let row = 0; row < rows; row++) {
     for (let col = 0; col <= row; col++) {
       const current = grid[row][col];
 
-      // Ligne vers le bas-gauche (parallèle au bord gauche) - seulement intérieur
       if (col < row + 1) {
         const bottomLeft = grid[row + 1][col];
-        // Ne pas tracer le bord gauche (col === 0)
         if (col > 0 || row < rows - 1) {
-          // On trace seulement les lignes intérieures
           if (col > 0) {
             points.push(current.clone(), bottomLeft.clone());
           }
         }
       }
 
-      // Ligne vers le bas-droite (parallèle au bord droit) - seulement intérieur
       if (col < row + 1) {
         const bottomRight = grid[row + 1][col + 1];
-        // Ne pas tracer le bord droit (col === row)
         if (col < row) {
           points.push(current.clone(), bottomRight.clone());
         }
       }
 
-      // Triangle pointant vers le bas (▽) - subdiviser
       const bottomLeft = grid[row + 1][col];
       const bottomRight = grid[row + 1][col + 1];
       subdivideTriangle(current, bottomLeft, bottomRight);
 
-      // Triangle pointant vers le haut (△) - seulement si pas au bord gauche
       if (col > 0) {
         const left = grid[row][col - 1];
         const bottom = grid[row + 1][col];
@@ -203,7 +189,6 @@ function createPascalTriangleLines(apex, baseLeft, baseRight, rows = 5) {
     }
   }
 
-  // Lignes horizontales (parallèles à la base) - intérieures seulement
   for (let row = 1; row < rows; row++) {
     for (let col = 0; col < row; col++) {
       const left = grid[row][col];
@@ -215,17 +200,15 @@ function createPascalTriangleLines(apex, baseLeft, baseRight, rows = 5) {
   return points;
 }
 
-// Crée une pyramide spéciale avec des faces subdivisées en triangles de Pascal
-// Crée une grille de carrés sur la base de la pyramide
+// Idem que pour les triangles sur les faces de la pyramide supérieure, on lui quadrille la base
 function createBaseGrid(baseVertices, divisions) {
   const points = [];
 
-  const corner0 = baseVertices[0]; // arrière-gauche
-  const corner1 = baseVertices[1]; // arrière-droit
-  const corner2 = baseVertices[2]; // avant-droit
-  const corner3 = baseVertices[3]; // avant-gauche
+  const corner0 = baseVertices[0];
+  const corner1 = baseVertices[1];
+  const corner2 = baseVertices[2];
+  const corner3 = baseVertices[3];
 
-  // Lignes parallèles à l'axe X (de gauche à droite)
   for (let i = 1; i < divisions; i++) {
     const t = i / divisions;
     const left = new THREE.Vector3().lerpVectors(corner0, corner3, t);
@@ -233,7 +216,6 @@ function createBaseGrid(baseVertices, divisions) {
     points.push(left.clone(), right.clone());
   }
 
-  // Lignes parallèles à l'axe Z (d'arrière à avant)
   for (let i = 1; i < divisions; i++) {
     const t = i / divisions;
     const back = new THREE.Vector3().lerpVectors(corner0, corner1, t);
@@ -244,21 +226,20 @@ function createBaseGrid(baseVertices, divisions) {
   return points;
 }
 
-function createPascalPyramid(size) {
+// On assemble les fonctions précédentes pour appliquer les traitements aux faces une par une
+function createFakePyramids(size) {
   const group = new THREE.Group();
   const a = size;
   const h = a * Math.sqrt(0.5);
 
-  // Sommets de la pyramide
   const baseVertices = [
-    new THREE.Vector3(-a / 2, 0, -a / 2), // 0: arrière-gauche
-    new THREE.Vector3(a / 2, 0, -a / 2), // 1: arrière-droit
-    new THREE.Vector3(a / 2, 0, a / 2), // 2: avant-droit
-    new THREE.Vector3(-a / 2, 0, a / 2), // 3: avant-gauche
+    new THREE.Vector3(-a / 2, 0, -a / 2),
+    new THREE.Vector3(a / 2, 0, -a / 2),
+    new THREE.Vector3(a / 2, 0, a / 2),
+    new THREE.Vector3(-a / 2, 0, a / 2),
   ];
   const apex = new THREE.Vector3(0, h, 0);
 
-  // Créer la géométrie de base (contour)
   const { geometry } = createPyramidGeometry(size);
   const edges = new THREE.EdgesGeometry(geometry);
   const lineMaterial = new THREE.LineBasicMaterial({
@@ -267,24 +248,19 @@ function createPascalPyramid(size) {
   const pyramidOutline = new THREE.LineSegments(edges, lineMaterial);
   group.add(pyramidOutline);
 
-  // Ajouter les subdivisions Pascal sur chaque face latérale
   const allPoints = [];
 
-  // Face 0-1-apex (arrière)
   allPoints.push(
-    ...createPascalTriangleLines(apex, baseVertices[0], baseVertices[1], 5)
+    ...createFakePyramidsLines(apex, baseVertices[0], baseVertices[1], 5),
   );
-  // Face 1-2-apex (droite)
   allPoints.push(
-    ...createPascalTriangleLines(apex, baseVertices[1], baseVertices[2], 5)
+    ...createFakePyramidsLines(apex, baseVertices[1], baseVertices[2], 5),
   );
-  // Face 2-3-apex (avant)
   allPoints.push(
-    ...createPascalTriangleLines(apex, baseVertices[2], baseVertices[3], 5)
+    ...createFakePyramidsLines(apex, baseVertices[2], baseVertices[3], 5),
   );
-  // Face 3-0-apex (gauche)
   allPoints.push(
-    ...createPascalTriangleLines(apex, baseVertices[3], baseVertices[0], 5)
+    ...createFakePyramidsLines(apex, baseVertices[3], baseVertices[0], 5),
   );
 
   if (allPoints.length > 0) {
@@ -293,15 +269,14 @@ function createPascalPyramid(size) {
     group.add(pascalLines);
   }
 
-  // Ajouter la grille de carrés sur la base
   const baseGridPoints = createBaseGrid(baseVertices, 15);
   if (baseGridPoints.length > 0) {
     const baseGridGeometry = new THREE.BufferGeometry().setFromPoints(
-      baseGridPoints
+      baseGridPoints,
     );
     const baseGridLines = new THREE.LineSegments(
       baseGridGeometry,
-      lineMaterial
+      lineMaterial,
     );
     group.add(baseGridLines);
   }
@@ -314,15 +289,15 @@ function createFractalPyramid(
   size,
   depth,
   extremity = null,
-  isTopLevel = true
+  isTopLevel = true,
 ) {
   const group = new THREE.Group();
   const h = size * Math.sqrt(0.5);
 
-  // Si c'est la pyramide du sommet, on utilise la version Pascal
+  // Si c'est la pyramide du sommet, on utilise la fausse (avec les triangles sur les faces et le quadrillage en dessous)
   if (isTopLevel && colorIdx > 1) {
-    const pascalPyramid = createPascalPyramid(size);
-    group.add(pascalPyramid);
+    const fakePyramid = createFakePyramids(size);
+    group.add(fakePyramid);
   } else {
     const { geometry } = createPyramidGeometry(size);
     const edges = new THREE.EdgesGeometry(geometry);
@@ -359,25 +334,25 @@ function createFractalPyramid(
         size,
         depth - 1,
         extremity === 1 || step % 3 === 1 ? 1 : null,
-        false
+        false,
       );
       const subPyramid2 = createFractalPyramid(
         size,
         depth - 1,
         extremity === 2 || step % 3 === 1 ? 2 : null,
-        false
+        false,
       );
       const subPyramid3 = createFractalPyramid(
         size,
         depth - 1,
         extremity === 3 || step % 3 === 1 ? 3 : null,
-        false
+        false,
       );
       const subPyramid4 = createFractalPyramid(
         size,
         depth - 1,
         extremity === 4 || step % 3 === 1 ? 4 : null,
-        false
+        false,
       );
 
       subPyramid1.position.set(-size / 2, -h, -size / 2);
@@ -405,13 +380,13 @@ function animate() {
     camera.position.z = THREE.MathUtils.lerp(
       cameraAnim.startZ,
       cameraAnim.targetZ,
-      smoothT
+      smoothT,
     );
 
     controls.target.y = THREE.MathUtils.lerp(
       cameraAnim.startTargetY,
       cameraAnim.targetTargetY,
-      smoothT
+      smoothT,
     );
 
     if (t >= 1) {
@@ -424,7 +399,7 @@ function animate() {
 }
 
 // Appelé depuis le script du jeu lui-même, ajoute un étage à la pyramide
-export function nextLevel(turn) {
+function nextLevel(turn) {
   let camTranslation = 0;
   let camRecul = 1;
 
@@ -433,17 +408,17 @@ export function nextLevel(turn) {
 
   if (turn > 0) {
     if (turn % 7 === 0) {
-      // À partir du tour 7, on agrandit les nouvelles pyramides et on change la couleur
+      // Tous les 7 tours, on agrandit les nouvelles pyramides et on change la couleur
       nextTier();
       pyramidSize = pyramidSize * 5;
       color = colors[colorIdx].hex;
       document.documentElement.style.setProperty(
         "--primary-color",
-        colors[colorIdx].rgb
+        colors[colorIdx].rgb,
       );
       document.documentElement.style.setProperty(
         "--primary-background",
-        colors[colorIdx].rgba
+        colors[colorIdx].rgba,
       );
       fractalDepth = 1;
       for (let i = 0; i < colorIdx; i++) {
@@ -486,3 +461,5 @@ export function nextLevel(turn) {
 }
 
 animate();
+
+export { nextLevel };
