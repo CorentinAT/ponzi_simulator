@@ -139,7 +139,7 @@ function evenement() {
   let idx;
   do {
     idx = Math.floor(Math.random() * evenements.length);
-  } while (eventsPasses.includes(idx));
+  } while (eventsPasses.includes(idx) || evenements[idx].tier > game.tier);
 
   eventsPasses.push(idx);
 
