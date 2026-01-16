@@ -257,7 +257,7 @@
   },
   {
     "id": 33,
-    "name": "Grand remplacement : on vous avait prévu, -{biff} biff et +{output}% rendement",
+    "name": "Grand remplacement : on vous avait prévenu, -{biff} biff et +{output}% rendement",
     "mode": "add",
     "biff": -500,
     "output": 0.25,

@@ -204,9 +204,9 @@ function selectPropale1() {
   document.getElementById("describe").textContent = formatTextPropale(propale1);
 
   // GAIN
-  const gain = propale1.bag - propale1.cost;
+  const gain = Math.floor(propale1.bag - propale1.cost);
   const gainEl = document.getElementById("addgain");
-  gainEl.textContent = gain * 1.1 ** (tour - 1) + " $";
+  gainEl.textContent = Math.floor(gain * 1.1 ** (tour - 1)) + " $";
   gainEl.style.color = gain > 0 ? "#00ff00" : gain < 0 ? "#ff0000" : "#ffffff";
 
   // RENDEMENT
@@ -234,9 +234,9 @@ function selectPropale2() {
   document.getElementById("describe").textContent = formatTextPropale(propale2);
   document.getElementsByClassName("stats")[0].style.display = "flex";
 
-  const gain = propale2.bag - propale2.cost;
+  const gain = Math.floor(propale2.bag - propale2.cost);
   const gainEl = document.getElementById("addgain");
-  gainEl.textContent = gain * 1.1 ** (tour - 1) + " $";
+  gainEl.textContent = Math.floor(gain * 1.1 ** (tour - 1)) + " $";
   gainEl.style.color = gain > 0 ? "#00ff00" : gain < 0 ? "#ff0000" : "#ffffff";
 
   const rendement = propale2.output;
