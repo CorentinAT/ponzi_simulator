@@ -110,6 +110,7 @@ function acheter() {
   game.biff -= parseInt(selectedPropale.cost);
   game.biff += parseInt(selectedPropale.bag);
   game.rendement += parseFloat(selectedPropale.output);
+  game.influence += parseFloat(selectedPropale.influence);
   game.nbInvestisseurs++;
   document.getElementById("investisseurs").textContent = game.nbInvestisseurs;
   game.tour++;
@@ -175,7 +176,7 @@ function acceptEvent() {
 function formatTextPropale(propale) {
   return propale.text
     .replaceAll("{cost}", Math.floor(propale.cost * 1.1 ** (tour - 1)))
-    .replaceAll("{bag}", Math.floor(propale.bag * 1.1 ** (tour - 1)))
+    .replaceAll("{bag}", Math.floor(propale.bag * 1.1 ** (tour - 1) * game.influence))
     .replaceAll("{output}", Math.floor(Math.abs(propale.output * 100)));
 }
 
@@ -204,7 +205,7 @@ function selectPropale1() {
   document.getElementById("describe").textContent = formatTextPropale(propale1);
 
   // GAIN
-  const gain = Math.floor(propale1.bag - propale1.cost);
+  const gain = Math.floor((propale1.bag * game.influence) - propale1.cost);
   const gainEl = document.getElementById("addgain");
   gainEl.textContent = Math.floor(gain * 1.1 ** (tour - 1)) + " $";
   gainEl.style.color = gain > 0 ? "#00ff00" : gain < 0 ? "#ff0000" : "#ffffff";
@@ -234,7 +235,7 @@ function selectPropale2() {
   document.getElementById("describe").textContent = formatTextPropale(propale2);
   document.getElementsByClassName("stats")[0].style.display = "flex";
 
-  const gain = Math.floor(propale2.bag - propale2.cost);
+  const gain = Math.floor((propale2.bag * game.influence) - propale2.cost);
   const gainEl = document.getElementById("addgain");
   gainEl.textContent = Math.floor(gain * 1.1 ** (tour - 1)) + " $";
   gainEl.style.color = gain > 0 ? "#00ff00" : gain < 0 ? "#ff0000" : "#ffffff";
