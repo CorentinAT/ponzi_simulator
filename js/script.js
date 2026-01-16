@@ -193,7 +193,7 @@ function formatTextEvent(event) {
       .replaceAll("{output}", Math.floor(Math.abs(event.output * 100)))
       .replaceAll("{biff}", Math.floor(event.biff * 1.1 ** (tour - 1)));
   }
-  return text
+  return event.name
     .replaceAll("{output}", Math.floor(event.output))
     .replaceAll("{biff}", Math.floor(event.biff));
 }
@@ -227,6 +227,17 @@ function selectPropale1() {
   influenceEl.textContent = influence + " d'influence";
   influenceEl.style.color =
     influence > 0 ? "#00ff00" : influence < 0 ? "#ff0000" : "#ffffff";
+
+  if (
+    propale2.cost * 1.1 ** (tour - 1) <= game.biff &&
+    propale1.cost * 1.1 ** (tour - 1) > game.biff
+  ) {
+    acceptPropaleButton.classList.add("disabled");
+    acceptPropaleButton.disabled = true;
+  } else {
+    acceptPropaleButton.classList.remove("disabled");
+    acceptPropaleButton.disabled = false;
+  }
 }
 
 function selectPropale2() {
@@ -254,6 +265,17 @@ function selectPropale2() {
   influenceEl.textContent = influence + " d'influence";
   influenceEl.style.color =
     influence > 0 ? "#00ff00" : influence < 0 ? "#ff0000" : "#ffffff";
+
+  if (
+    propale1.cost * 1.1 ** (tour - 1) <= game.biff &&
+    propale2.cost * 1.1 ** (tour - 1) > game.biff
+  ) {
+    acceptPropaleButton.classList.add("disabled");
+    acceptPropaleButton.disabled = true;
+  } else {
+    acceptPropaleButton.classList.remove("disabled");
+    acceptPropaleButton.disabled = false;
+  }
 }
 
 // Fin de partie, on affiche le résultat
