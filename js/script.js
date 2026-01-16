@@ -109,8 +109,10 @@ function acheter() {
 
   // On met à jours nos attributs en fonction de l'investisseur choisi
   investisseursAchetes.push(selectedPropale.id);
-  game.biff -= parseInt(selectedPropale.cost);
-  game.biff += parseInt(selectedPropale.bag);
+  game.biff -= parseInt(selectedPropale.cost * 1.1 ** (tour - 1));
+  game.biff += parseInt(
+    selectedPropale.bag * 1.1 ** (tour - 1) * game.influence
+  );
   game.rendement += parseFloat(selectedPropale.output);
   game.influence += parseFloat(selectedPropale.influence);
   game.nbInvestisseurs++;
