@@ -1,7 +1,7 @@
 [
   {
     "id": 1,
-    "name": "Braquage de banque : vous gagnez 800 biff",
+    "name": "Braquage de banque : vous gagnez {biff} biff",
     "mode": "add",
     "biff": 800,
     "output": 0.0,
@@ -9,7 +9,7 @@
   },
   {
     "id": 2,
-    "name": "Stonks : +10% rendement",
+    "name": "Stonks : +{output}% rendement",
     "mode": "add",
     "biff": 0,
     "output": 0.1,
@@ -17,7 +17,7 @@
   },
   {
     "id": 3,
-    "name": "Not stonks : -10% rendement",
+    "name": "Not stonks : -{output}% rendement",
     "mode": "add",
     "biff": 0,
     "output": -0.1,
@@ -25,7 +25,7 @@
   },
   {
     "id": 4,
-    "name": "Héritage : Vous récupérez 1000 biff de Mamie, paix à son âme, mais vous payez 20% de frais de notaire",
+    "name": "Héritage : Vous récupérez {biff} biff de Mamie, paix à son âme, mais vous payez {output}% de frais de notaire",
     "mode": "add",
     "biff": 1000,
     "output": -0.2,
@@ -33,7 +33,7 @@
   },
   {
     "id": 5,
-    "name": "Liquidation : votre boîte coule à cause de vos investissements catastrophiques, biff divisé par 4",
+    "name": "Liquidation : votre boîte coule à cause de vos investissements catastrophiques, biff divisé par {biff}",
     "mode": "divide",
     "biff": 4,
     "output": 1,
@@ -41,7 +41,7 @@
   },
   {
     "id": 6,
-    "name": "Euromillion : +3000 biff, mais les impôts sont à vos trousses, -30%.",
+    "name": "Euromillion : +{biff} biff, mais les impôts sont à vos trousses, -{output}%.",
     "mode": "add",
     "biff": 3000,
     "output": -0.3,
@@ -49,7 +49,7 @@
   },
   {
     "id": 7,
-    "name": "Hack général : plus rien ne marche, rendement divisé par 2.",
+    "name": "Hack général : plus rien ne marche, rendement divisé par {output}.",
     "mode": "divide",
     "biff": 1,
     "output": 2,
@@ -57,7 +57,7 @@
   },
   {
     "id": 8,
-    "name": "Racket organisé : vous rackettez un collégien et lui volez sa puff, +200biff.",
+    "name": "Racket organisé : vous rackettez un collégien et lui volez sa puff, +{biff} biff.",
     "mode": "add",
     "biff": 200,
     "output": 0.0,
@@ -65,7 +65,7 @@
   },
   {
     "id": 9,
-    "name": "Coup de pub : votre fond d'investissement est partagé sur la chaîne CNews, +10% rendement",
+    "name": "Coup de pub : votre fond d'investissement est partagé sur la chaîne CNews, +{output}% rendement",
     "mode": "add",
     "biff": 0,
     "output": 0.1,
@@ -73,7 +73,7 @@
   },
   {
     "id": 10,
-    "name": "OnlyFans : le OnlyFans de votre soeur génère un revenu régulier, bien joué à elle, +10% rendement.",
+    "name": "OnlyFans : le OnlyFans de votre soeur génère un revenu régulier, bien joué à elle, +{output}% rendement.",
     "mode": "add",
     "biff": 0,
     "output": 0.1,
@@ -81,7 +81,7 @@
   },
   {
     "id": 11,
-    "name": "Petit business : vous arnaquez un type dans la rue au jeu de Dé, +100 biff.",
+    "name": "Petit business : vous arnaquez un type dans la rue au jeu de Dé, +{biff} biff.",
     "mode": "add",
     "biff": 100,
     "output": 0.0,
@@ -89,7 +89,7 @@
   },
   {
     "id": 12,
-    "name": "Pass de combat : les skins coûtent vraiment cher, -5% rendement.",
+    "name": "Pass de combat : les skins coûtent vraiment cher, -{output}% rendement.",
     "mode": "add",
     "biff": 0,
     "output": -0.05,
@@ -105,7 +105,7 @@
   },
   {
     "id": 14,
-    "name": "Impôts : l'Etat n'apprécie pas votre petit business, -10% rendement",
+    "name": "Impôts : l'Etat n'apprécie pas votre petit business, -{output}% rendement",
     "mode": "add",
     "biff": 0,
     "output": -0.1,
@@ -113,7 +113,7 @@
   },
   {
     "id": 15,
-    "name": "URSSAF : Toc toc toc ! -20%",
+    "name": "URSSAF : Toc toc toc ! -{output}%",
     "mode": "add",
     "biff": 0,
     "output": -0.2,
@@ -121,7 +121,7 @@
   },
   {
     "id": 16,
-    "name": "La France à Macron : Toutes vos ressources sont divisées par 2",
+    "name": "La France à Macron : Toutes vos ressources sont divisées par {biff}",
     "mode": "divide",
     "biff": 2,
     "output": 2,
@@ -129,7 +129,7 @@
   },
   {
     "id": 17,
-    "name": "Ligaments croisés : 400 biff de frais d'hôpital",
+    "name": "Ligaments croisés : {biff} biff de frais d'hôpital",
     "mode": "add",
     "biff": -400,
     "output": 0.0,
@@ -137,7 +137,7 @@
   },
   {
     "id": 18,
-    "name": "Cadeau de Mère-grand : +100 biff, merci mamie :)",
+    "name": "Cadeau de Mère-grand : +{biff} biff, merci mamie :)",
     "mode": "add",
     "biff": 100,
     "output": 0.0,
@@ -145,7 +145,7 @@
   },
   {
     "id": 19,
-    "name": "Addiction à la cigarette : le paquet fumé par jour n'est pas un bon investissement, -5% rendement",
+    "name": "Addiction à la cigarette : le paquet fumé par jour n'est pas un bon investissement, -{output}% rendement",
     "mode": "add",
     "biff": 0,
     "output": -0.05,
@@ -153,7 +153,7 @@
   },
   {
     "id": 20,
-    "name": "Assurance : mieux vaut être prudent, -10% rendement",
+    "name": "Assurance : mieux vaut être prudent, -{output}% rendement",
     "mode": "add",
     "biff": 0,
     "output": -0.1,
@@ -161,7 +161,7 @@
   },
   {
     "id": 21,
-    "name": "Crevaison : 150 biff pour réparer, et avec l'assurance, -20% rendement",
+    "name": "Crevaison : {biff} biff pour réparer, et avec l'assurance, -{output}% rendement",
     "mode": "add",
     "biff": -150,
     "output": -0.2,
@@ -169,7 +169,7 @@
   },
   {
     "id": 22,
-    "name": "Scam : Vous vous faites avoir par un brouteur en provenance du Brésil, -450 biff",
+    "name": "Scam : Vous vous faites avoir par un brouteur en provenance du Brésil, -{biff} biff",
     "mode": "add",
     "biff": -450,
     "output": 0.0,
@@ -177,7 +177,7 @@
   },
   {
     "id": 23,
-    "name": "Get pranked, ça tourne bien ! +450 biff",
+    "name": "Get pranked, ça tourne bien ! +{biff} biff",
     "mode": "add",
     "biff": 450,
     "output": 0.0,
@@ -185,7 +185,7 @@
   },
   {
     "id": 24,
-    "name": "Addiction à la cocaïne : la farine est coupée au mur, -15% rendement",
+    "name": "Addiction à la cocaïne : la farine est coupée au mur, -{output}% rendement",
     "mode": "add",
     "biff": 0,
     "output": -0.15,
@@ -193,7 +193,7 @@
   },
   {
     "id": 25,
-    "name": "Addiction aux médicaments : -10% rendement",
+    "name": "Addiction aux médicaments : -{output}% rendement",
     "mode": "add",
     "biff": 0,
     "output": -0.1,
@@ -201,7 +201,7 @@
   },
   {
     "id": 26,
-    "name": "Addiction au cannabis : -10% rendement",
+    "name": "Addiction au cannabis : -{output}% rendement",
     "mode": "add",
     "biff": 0,
     "output": -0.1,
@@ -209,7 +209,7 @@
   },
   {
     "id": 27,
-    "name": "Rachat de CoolLab : Jules vous cède ses parts en échange de 600 biff, +15% rendement",
+    "name": "Rachat de CoolLab : Jules vous cède ses parts en échange de {biff} biff, +{output}% rendement",
     "mode": "add",
     "biff": -600,
     "output": 0.15,
@@ -217,7 +217,7 @@
   },
   {
     "id": 28,
-    "name": "Bad buzz : C'est de la diffamation ! +1000 biff, -20%",
+    "name": "Bad buzz : C'est de la diffamation ! +{biff} biff, -{output}%",
     "mode": "add",
     "biff": 1000,
     "output": -0.2,
@@ -225,7 +225,7 @@
   },
   {
     "id": 29,
-    "name": "Squatteurs dans les locaux : ils piquent dans les caisses quand vous n'êtes pas là, -10% rendement.",
+    "name": "Squatteurs dans les locaux : ils piquent dans les caisses quand vous n'êtes pas là, -{output}% rendement.",
     "mode": "add",
     "biff": 0,
     "output": -0.1,
@@ -257,7 +257,7 @@
   },
   {
     "id": 33,
-    "name": "Grand remplacement : on vous avait prévu, -500 biff et +25% rendement",
+    "name": "Grand remplacement : on vous avait prévu, -{biff} biff et +{output}% rendement",
     "mode": "add",
     "biff": -500,
     "output": 0.25,
@@ -265,7 +265,7 @@
   },
   {
     "id": 34,
-    "name": "Crash Boursier : vous vendez toutes vos actions, +3000 biff, -40% rendement",
+    "name": "Crash Boursier : vous vendez toutes vos actions, +{biff} biff, -{output}% rendement",
     "mode": "add",
     "biff": 3000,
     "output": -0.4,

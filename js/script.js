@@ -49,10 +49,12 @@ function majStats() {
 
 function afficherPropositions() {
   document.getElementById("propale1-name").textContent = propale1.name;
-  document.getElementById("propale1-cost").textContent = propale1.cost + "$";
+  document.getElementById("propale1-cost").textContent =
+    Math.floor(propale1.cost * 1.1 ** (tour - 1)) + "$";
 
   document.getElementById("propale2-name").textContent = propale2.name;
-  document.getElementById("propale2-cost").textContent = propale2.cost + "$";
+  document.getElementById("propale2-cost").textContent =
+    Math.floor(propale2.cost * 1.1 ** (tour - 1)) + "$";
 }
 
 function nouveauTour() {
@@ -72,7 +74,6 @@ function nouveauTour() {
   do {
     const idx = Math.floor(Math.random() * investisseurs.length);
     propale1 = investisseurs[idx];
-    console.log(propale1);
   } while (investisseursAchetes.includes(propale1.id));
   do {
     const idx = Math.floor(Math.random() * investisseurs.length);
@@ -142,13 +143,13 @@ function evenement() {
 
   currentEvent = evenements[idx];
 
-  eventElement.children[1].textContent = currentEvent.name;
+  eventElement.children[1].textContent = formatTextEvent(currentEvent);
 }
 
 // Clic sur le bouton "compris" de l'évènement, calcule nos attributs en fonction du type d'effet de l'évènement
 function acceptEvent() {
   if (currentEvent.mode === "add") {
-    game.biff += parseInt(currentEvent.biff);
+    game.biff += parseInt(currentEvent.biff * 1.1 ** (tour - 1));
     game.rendement += parseFloat(currentEvent.output);
   } else if (currentEvent.mode === "divide") {
     game.biff = Math.floor(game.biff / parseFloat(currentEvent.biff));
@@ -162,19 +163,33 @@ function acceptEvent() {
     game.biff += resultatCasino;
     // On informe le joueur du résultat du casino
     if (resultatCasino >= 0) {
-      alert(`Vous avez empoché ${resultatCasino}$ au casino !`);
+      alert(`Vous avez empoché ${resultatCasino} biff au casino !`);
     } else {
-      alert(`Vous avez perdu ${Math.abs(resultatCasino)}$ au casino...`);
+      alert(`Vous avez perdu ${Math.abs(resultatCasino)} biff au casino...`);
     }
   }
   nouveauTour();
 }
 
-function formatTextWithValues(text) {
-  return text
-    .replaceAll("{cost}", propale1.cost)
-    .replaceAll("{bag}", propale1.bag)
-    .replaceAll("{output}", Math.floor(Math.abs(propale1.output * 100)));
+function formatTextPropale(propale) {
+  return propale.text
+    .replaceAll("{cost}", Math.floor(propale.cost * 1.1 ** (tour - 1)))
+    .replaceAll("{bag}", Math.floor(propale.bag * 1.1 ** (tour - 1)))
+    .replaceAll("{output}", Math.floor(Math.abs(propale.output * 100)));
+}
+
+function formatTextEvent(event) {
+  const text = event.name.replaceAll(
+    "{output}",
+    Math.floor(Math.abs(event.output * 100))
+  );
+  if (event.mode === "add") {
+    return text.replaceAll(
+      "{biff}",
+      Math.floor(event.biff * 1.1 ** (tour - 1))
+    );
+  }
+  return text.replaceAll("{biff}", Math.floor(event.biff));
 }
 
 // Clic sur une proposition (avant validation)
@@ -183,9 +198,7 @@ function selectPropale1() {
   propale1Element.classList.add("selected");
   selectedPropale = propale1;
   propale2Element.classList.remove("selected");
-  document.getElementById("describe").textContent = formatTextWithValues(
-    propale1.text
-  );
+  document.getElementById("describe").textContent = formatTextPropale(propale1);
 }
 
 function selectPropale2() {
@@ -193,9 +206,7 @@ function selectPropale2() {
   propale2Element.classList.add("selected");
   selectedPropale = propale2;
   propale1Element.classList.remove("selected");
-  document.getElementById("describe").textContent = formatTextWithValues(
-    propale2.text
-  );
+  document.getElementById("describe").textContent = formatTextPropale(propale2);
 }
 
 // Victoire d'une partie, on affiche le résultat

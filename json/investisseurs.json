@@ -384,7 +384,7 @@
     "bag": 300,
     "cost": 600,
     "output": -0.15,
-    "text": "Ilyass coûte {cost} biff et arrive avec un capital de {bag} biff. Il casse les oreilles de tout le monde en jouant de l'oud en boucle. Rendement {output}%.",
+    "text": "Ilyass coûte {cost} biff et arrive avec un capital de {bag} biff. Il casse les oreilles de tout le monde en jouant de l'oud en boucle. Rendement -{output}%.",
     "upgrade_id": 1
   },
   {
@@ -429,7 +429,7 @@
     "bag": 0,
     "cost": 400,
     "output": -0.1,
-    "text": "Guilhem coûte {cost} biff. Guimii music n'est pas encore assez rentable, {output}% rendement.",
+    "text": "Guilhem coûte {cost} biff. Guimii music n'est pas encore assez rentable, -{output}% rendement.",
     "upgrade_id": 1
   },
   {
