@@ -14,6 +14,7 @@ let selectedPropale = null;
 let currentEvent = null;
 
 const eventsPasses = []; // Servira à ne pas avoir le même évènement deux fois dans la partie
+const investisseursAchetes = []; // Idem pour ne pas avoir un investisseur déjà acheté
 
 const propale1Element = document.getElementById("propale1");
 const propale2Element = document.getElementById("propale2");
@@ -28,7 +29,7 @@ const propalesTextElement = document.getElementById("propales-text");
 // Attributs au lancement de la partie
 const game = {
   biff: 1000,
-  rendement: 1.1,
+  rendement: 10,
   tour: 1,
   nbInvestisseurs: 0,
   enCours: true,
@@ -62,14 +63,15 @@ function nouveauTour() {
   game.biff *= game.rendement; // Calcul des nouveaux fonds en fonction du rendement
 
   // Choix aléatoire des investisseurs proposés
-  const idx1 = Math.floor(Math.random() * investisseurs.length);
-  let idx2 = Math.floor(Math.random() * investisseurs.length);
-  while (idx2 === idx1) {
-    idx2 = Math.floor(Math.random() * investisseurs.length);
-  }
-
-  propale1 = investisseurs[idx1];
-  propale2 = investisseurs[idx2];
+  do {
+    const idx = Math.floor(Math.random() * investisseurs.length);
+    propale1 = investisseurs[idx];
+    console.log(propale1);
+  } while (investisseursAchetes.includes(propale1.id));
+  do {
+    const idx = Math.floor(Math.random() * investisseurs.length);
+    propale2 = investisseurs[idx];
+  } while (propale2.id === propale1.id);
 
   // Augmentation de la taille de la pyramide 3D
   nextLevel(tour);
@@ -93,6 +95,7 @@ function acheter() {
   }
 
   // On met à jours nos attributs en fonction de l'investisseur choisi
+  investisseursAchetes.push(selectedPropale.id);
   game.biff -= parseInt(selectedPropale.cost);
   game.biff += parseInt(selectedPropale.bag);
   game.rendement += parseFloat(selectedPropale.output);
@@ -158,13 +161,22 @@ function acceptEvent() {
   nouveauTour();
 }
 
+function formatTextWithValues(text) {
+  return text
+    .replaceAll("{cost}", propale1.cost)
+    .replaceAll("{bag}", propale1.bag)
+    .replaceAll("{output}", Math.floor(Math.abs(propale1.output * 100)));
+}
+
 // Clic sur une proposition (avant validation)
 function selectPropale1() {
   acceptPropaleButton.style.display = "initial";
   propale1Element.classList.add("selected");
   selectedPropale = propale1;
   propale2Element.classList.remove("selected");
-  document.getElementById("describe").textContent = propale1.text;
+  document.getElementById("describe").textContent = formatTextWithValues(
+    propale1.text
+  );
 }
 
 function selectPropale2() {
@@ -172,7 +184,9 @@ function selectPropale2() {
   propale2Element.classList.add("selected");
   selectedPropale = propale2;
   propale1Element.classList.remove("selected");
-  document.getElementById("describe").textContent = propale2.text;
+  document.getElementById("describe").textContent = formatTextWithValues(
+    propale2.text
+  );
 }
 
 // Victoire d'une partie, on affiche le résultat

@@ -5,7 +5,7 @@
     "bag": 200,
     "cost": 200,
     "output": 0.01,
-    "text": "Alex coûte 200 biff et arrive avec un capital de 200 biff. Grâce à son automate cellulaire musical, il améliore le rendement de 1.%",
+    "text": "Alex coûte {cost} biff et arrive avec un capital de {bag} biff. Grâce à son automate cellulaire musical, il améliore le rendement de {output}%",
     "upgrade_id": 1
   },
   {
@@ -14,7 +14,7 @@
     "bag": 600,
     "cost": 400,
     "output": -0.04,
-    "text": "Léna coûte 400 biff et arrive avec un capital de 600 biff. Cependant elle baisse le rendement de 4%.",
+    "text": "Léna coûte {cost} biff et arrive avec un capital de {bag} biff. Cependant elle baisse le rendement de {output}%.",
     "upgrade_id": 1
   },
   {
@@ -23,7 +23,7 @@
     "bag": 100,
     "cost": 600,
     "output": 0.05,
-    "text": "Elouan coûte 600 biff et arrive avec un capital de 100 biff. Ses parts dans différentes usines de production de boissons alcoolisées augmentent le rendement de 5%.",
+    "text": "Elouan coûte {cost} biff et arrive avec un capital de {bag} biff. Ses parts dans différentes usines de production de boissons alcoolisées augmentent le rendement de {output}%.",
     "upgrade_id": 1
   },
   {
@@ -32,7 +32,7 @@
     "bag": 1000,
     "cost": 500,
     "output": -0.03,
-    "text": "Benoit coûte 500 biff et arrive avec un capital de 1000 biff. à cause de ses mauvaises prévisions météo, il baisse le rendu de 3%.",
+    "text": "Benoit coûte {cost} biff et arrive avec un capital de {bag} biff. à cause de ses mauvaises prévisions météo, il baisse le rendu de {output}%.",
     "upgrade_id": 1
   },
   {
@@ -41,7 +41,7 @@
     "bag": 200,
     "cost": 1000,
     "output": 0.12,
-    "text": "Yanis coûte 1000 biff et arrive avec un capital de 200 biff. Il augmente le rendement de 12%.",
+    "text": "Yanis coûte {cost} biff et arrive avec un capital de {bag} biff. Il augmente le rendement de {output}%.",
     "upgrade_id": 1
   },
   {
@@ -50,7 +50,7 @@
     "bag": 400,
     "cost": 200,
     "output": 0.0,
-    "text": "Matthieu coûte 200 biff mais rapporte 400 biff grâce à son business de cartes Pokémon.",
+    "text": "Matthieu coûte {cost} biff mais rapporte {bag} biff grâce à son business de cartes Pokémon.",
     "upgrade_id": 1
   },
   {
@@ -59,7 +59,7 @@
     "bag": 1500,
     "cost": 600,
     "output": -0.08,
-    "text": "Agathe coûte 600 biff et arrive avec un capital de 1500 biff. Cependant elle baisse le rendement de 8%.",
+    "text": "Agathe coûte {cost} biff et arrive avec un capital de {bag} biff. Cependant elle baisse le rendement de {output}%.",
     "upgrade_id": 1
   },
   {
@@ -68,7 +68,7 @@
     "bag": 300,
     "cost": 600,
     "output": -0.02,
-    "text": "Marine coûte 600 biff et arrive avec un capital de 300 biff. Cependant elle baisse le rendement de 2%.",
+    "text": "Marine coûte {cost} biff et arrive avec un capital de {bag} biff. Cependant elle baisse le rendement de {output}%.",
     "upgrade_id": 1
   },
   {
@@ -77,7 +77,7 @@
     "bag": 100,
     "cost": 700,
     "output": 0.04,
-    "text": "Alina coûte 700 biff et arrive avec un capital de 100 biff. Elle augmente le rendement de 2%.",
+    "text": "Alina coûte {cost} biff et arrive avec un capital de {bag} biff. Elle augmente le rendement de {output}%.",
     "upgrade_id": 1
   },
   {
@@ -86,7 +86,7 @@
     "bag": 100,
     "cost": 200,
     "output": -0.12,
-    "text": "Alex coûte 200 biff et arrive avec un capital de 100 biff. Cependant, il baisse le rendement de 12%, c'est un mauvais investisseur.",
+    "text": "Alex coûte {cost} biff et arrive avec un capital de {bag} biff. Cependant, il baisse le rendement de {output}%, c'est un mauvais investisseur.",
     "upgrade_id": 1
   },
   {
@@ -95,7 +95,7 @@
     "bag": 500,
     "cost": 500,
     "output": 0.07,
-    "text": "Anthony coûte 500 biff et arrive avec un capital de 500 biff. Grâce à ses multiples diplômes, il augmente le rendement de 7%.",
+    "text": "Anthony coûte {cost} biff et arrive avec un capital de {bag} biff. Grâce à ses multiples diplômes, il augmente le rendement de {output}%.",
     "upgrade_id": 1
   },
   {
@@ -104,7 +104,7 @@
     "bag": 500,
     "cost": 200,
     "output": -0.25,
-    "text": "Oussama coûte 200 biff et arrive avec un capital de 500 biff. Il baisse le rendement de 25%, n'hésitez pas à ne vraiment pas lui faire confiance.",
+    "text": "Oussama coûte {cost} biff et arrive avec un capital de {bag} biff. Il baisse le rendement de {output}%, n'hésitez pas à ne vraiment pas lui faire confiance.",
     "upgrade_id": 1
   },
   {
@@ -113,7 +113,7 @@
     "bag": 200,
     "cost": 200,
     "output": -0.06,
-    "text": "Romane coûte 200 biff et arrive avec un capital de 200 biff. Elle baisse le rendement de 6%.",
+    "text": "Romane coûte {cost} biff et arrive avec un capital de {bag} biff. Elle baisse le rendement de {output}%.",
     "upgrade_id": 1
   },
   {
@@ -122,7 +122,7 @@
     "bag": 100,
     "cost": 400,
     "output": -0.1,
-    "text": "Novelli coûte 400 biff et arrive avec un capital de 100 biff. Il applique une division euclidienne de 4600/160% sur votre rendement.",
+    "text": "Novelli coûte {cost} biff et arrive avec un capital de {bag} biff. Il applique une division euclidienne de 4600/160% sur votre rendement.",
     "upgrade_id": 1
   },
   {
@@ -131,7 +131,7 @@
     "bag": 600,
     "cost": 200,
     "output": 0.1,
-    "text": "Corentin coûte 200 biff et arrive avec un capital de 600 biff. Vu qu'il est super sympa, il augmente votre rendement de 10%.",
+    "text": "Corentin coûte {cost} biff et arrive avec un capital de {bag} biff. Vu qu'il est super sympa, il augmente votre rendement de {output}%.",
     "upgrade_id": 1
   },
   {
@@ -140,7 +140,7 @@
     "bag": 1000,
     "cost": 800,
     "output": 0.04,
-    "text": "Laïn coûte 800 biff et arrive avec un capital de 1000 biff. Bientôt le disque d'or, augmentation du rendement de 4%.",
+    "text": "Laïn coûte {cost} biff et arrive avec un capital de {bag} biff. Bientôt le disque d'or, augmentation du rendement de {output}%.",
     "upgrade_id": 1
   },
   {
@@ -149,7 +149,7 @@
     "bag": 600,
     "cost": 400,
     "output": -0.04,
-    "text": "Nils coûte 400 biff et arrive avec un capital de 600 biff. Il t'enferme dans les cavernes, baisse du rendement de 4%.",
+    "text": "Nils coûte {cost} biff et arrive avec un capital de {bag} biff. Il t'enferme dans les cavernes, baisse du rendement de {output}%.",
     "upgrade_id": 1
   },
   {
@@ -158,7 +158,7 @@
     "bag": 0,
     "cost": 400,
     "output": 0,
-    "text": "Lalie coûte 400 biff, mais vous ne gagnez rien à cause des ligaments croisés.",
+    "text": "Lalie coûte {cost} biff, mais vous ne gagnez rien à cause des ligaments croisés.",
     "upgrade_id": 1
   },
   {
@@ -167,7 +167,7 @@
     "bag": 300,
     "cost": 200,
     "output": 0.03,
-    "text": "Yasmine coûte 200 biff et arrive avec un capital de 300 biff. Augmentation du rendement de 3%.",
+    "text": "Yasmine coûte {cost} biff et arrive avec un capital de {bag} biff. Augmentation du rendement de {output}%.",
     "upgrade_id": 1
   },
   {
@@ -176,7 +176,7 @@
     "bag": 600,
     "cost": 800,
     "output": -0.05,
-    "text": "Qays coûte 800 biff et arrive avec un capital de 600 biff. Baisse du rendement de 5%.",
+    "text": "Qays coûte {cost} biff et arrive avec un capital de {bag} biff. Baisse du rendement de {output}%.",
     "upgrade_id": 1
   },
   {
@@ -185,7 +185,7 @@
     "bag": 300,
     "cost": 500,
     "output": -0.1,
-    "text": "Jules coûte 500 biff et arrive avec un capital de 300 biff. Il te fait un tunnel en parlant de CoolLab, baisse du rendement de 10%.",
+    "text": "Jules coûte {cost} biff et arrive avec un capital de {bag} biff. Il te fait un tunnel en parlant de CoolLab, baisse du rendement de {output}%.",
     "upgrade_id": 1
   },
   {
@@ -194,7 +194,7 @@
     "bag": 800,
     "cost": 700,
     "output": 0.04,
-    "text": "Jade coûte 700 biff et arrive avec un capital de 800 biff. Augmentation du rendement de 10%.",
+    "text": "Jade coûte {cost} biff et arrive avec un capital de {bag} biff. Augmentation du rendement de {output}%.",
     "upgrade_id": 1
   },
   {
@@ -203,7 +203,7 @@
     "bag": 400,
     "cost": 400,
     "output": -0.06,
-    "text": "Kellian coûte 400 biff et arrive avec un capital de 400 biff. Il refile le Covid à toute l'entreprise, baisse du rendement de 6%.",
+    "text": "Kellian coûte {cost} biff et arrive avec un capital de {bag} biff. Il refile le Covid à toute l'entreprise, baisse du rendement de {output}%.",
     "upgrade_id": 1
   },
   {
@@ -212,7 +212,7 @@
     "bag": 300,
     "cost": 200,
     "output": 0.2,
-    "text": "Chloé coûte 200 biff et arrive avec un capital de 300 biff. Augmentation du rendement de 2%.",
+    "text": "Chloé coûte {cost} biff et arrive avec un capital de {bag} biff. Augmentation du rendement de {output}%.",
     "upgrade_id": 1
   },
   {
@@ -221,7 +221,7 @@
     "bag": 200,
     "cost": 400,
     "output": 0.04,
-    "text": "Raphaël coûte 400 biff et arrive avec un capital de 200 biff. Augmentation du rendement de 4%.",
+    "text": "Raphaël coûte {cost} biff et arrive avec un capital de {bag} biff. Augmentation du rendement de {output}%.",
     "upgrade_id": 1
   },
   {
@@ -229,8 +229,8 @@
     "name": "Julie",
     "bag": 1000,
     "cost": 800,
-    "output": -0.05,
-    "text": "Julie coûte 800 biff et arrive avec un capital de 1000 biff. Baisse du rendement de 10%.",
+    "output": -0.1,
+    "text": "Julie coûte {cost} biff et arrive avec un capital de {bag} biff. Baisse du rendement de {output}%.",
     "upgrade_id": 1
   },
   {
@@ -239,7 +239,7 @@
     "bag": 1500,
     "cost": 1000,
     "output": -0.05,
-    "text": "Mila coûte 1000 biff et arrive avec un capital de 1500 biff. Baisse du rendement de 5%.",
+    "text": "Mila coûte {cost} biff et arrive avec un capital de {bag} biff. Baisse du rendement de {output}%.",
     "upgrade_id": 1
   },
   {
@@ -248,7 +248,7 @@
     "bag": 600,
     "cost": 300,
     "output": 0.02,
-    "text": "Romana coûte 300 biff et arrive avec un capital de 600 biff. Baisse du rendement de 2%.",
+    "text": "Romana coûte {cost} biff et arrive avec un capital de {bag} biff. Baisse du rendement de {output}%.",
     "upgrade_id": 1
   },
   {
@@ -257,7 +257,7 @@
     "bag": 100,
     "cost": 300,
     "output": -0.06,
-    "text": "Julien coûte 300 biff et arrive avec un capital de 100 biff. Il tappe très fort sur la table pour que vous cédiez une part du gâteau, baisse du rendement de 6%.",
+    "text": "Julien coûte {cost} biff et arrive avec un capital de {bag} biff. Il tappe très fort sur la table pour que vous cédiez une part du gâteau, baisse du rendement de {output}%.",
     "upgrade_id": 1
   },
   {
@@ -266,7 +266,7 @@
     "bag": 1200,
     "cost": 900,
     "output": -0.05,
-    "text": "Romane coûte 900 biff et arrive avec un capital de 1200 biff. La prépa c'est dur, baisse du rendement de 5%.",
+    "text": "Romane coûte {cost} biff et arrive avec un capital de {bag} biff. La prépa c'est dur, baisse du rendement de {output}%.",
     "upgrade_id": 1
   },
   {
@@ -275,7 +275,7 @@
     "bag": 1800,
     "cost": 1200,
     "output": -0.02,
-    "text": "Romane coûte 1200 biff et arrive avec un capital de 1800 biff. Baisse du rendement de 2%.",
+    "text": "Romane coûte {cost} biff et arrive avec un capital de {bag} biff. Baisse du rendement de {output}%.",
     "upgrade_id": 1
   },
   {
@@ -284,7 +284,7 @@
     "bag": 100,
     "cost": 500,
     "output": 0.1,
-    "text": "Elea coûte 500 biff et arrive avec un capital de 100 biff. Elle vous cède des parts dans son usine de cookies du Crous, augmentation du rendement de 10%.",
+    "text": "Elea coûte {cost} biff et arrive avec un capital de {bag} biff. Elle vous cède des parts dans son usine de cookies du Crous, augmentation du rendement de {output}%.",
     "upgrade_id": 1
   },
   {
@@ -293,7 +293,7 @@
     "bag": 1000,
     "cost": 800,
     "output": 0.07,
-    "text": "Justine coûte 800 biff et arrive avec un capital de 1000 biff. Elle te fait un emploi du temps tout propre, augmente du rendement de 7%.",
+    "text": "Justine coûte {cost} biff et arrive avec un capital de {bag} biff. Elle te fait un emploi du temps tout propre, augmente du rendement de {output}%.",
     "upgrade_id": 1
   },
   {
@@ -302,7 +302,7 @@
     "bag": 600,
     "cost": 400,
     "output": -0.05,
-    "text": "Lucille coûte 400 biff et arrive avec un capital de 600 biff. Elle investit une partie du biff dans la Tech, baisse du rendement de 5% (ce n'est pas rentable Lucille).",
+    "text": "Lucille coûte {cost} biff et arrive avec un capital de {bag} biff. Elle investit une partie du biff dans la Tech, baisse du rendement de {output}% (ce n'est pas rentable Lucille).",
     "upgrade_id": 1
   },
   {
@@ -311,7 +311,7 @@
     "bag": 800,
     "cost": 500,
     "output": 0,
-    "text": "Souksana coûte 500 biff et arrive avec un capital de 800 biff.",
+    "text": "Souksana coûte {cost} biff et arrive avec un capital de {bag} biff.",
     "upgrade_id": 1
   },
   {
@@ -320,7 +320,7 @@
     "bag": 1000,
     "cost": 200,
     "output": -0.2,
-    "text": "Roméo coûte 200 biff et arrive avec un capital de 1000 biff. Il instaure l'anarchie dans l'entreprise, baisse du rendement de 20%.",
+    "text": "Roméo coûte {cost} biff et arrive avec un capital de {bag} biff. Il instaure l'anarchie dans l'entreprise, baisse du rendement de {output}%.",
     "upgrade_id": 1
   },
   {
@@ -329,7 +329,7 @@
     "bag": 0,
     "cost": 700,
     "output": 0.1,
-    "text": "Guillaume coûte 700 biff. Il ne rapporte pas de biff parce qu'il a payé une carte graphique pour faire du blender mais augmente le rendement de 10%.",
+    "text": "Guillaume coûte {cost} biff. Il ne rapporte pas de biff parce qu'il a payé une carte graphique pour faire du blender mais augmente le rendement de {output}%.",
     "upgrade_id": 1
   },
   {
@@ -338,16 +338,16 @@
     "bag": 200,
     "cost": 400,
     "output": -0.05,
-    "text": "Killian coûte 400 biff et arrive avec un capital de 200 biff. Ses sites web ne se vendent pas, baisse du rendement de 5%.",
+    "text": "Killian coûte {cost} biff et arrive avec un capital de {bag} biff. Ses sites web ne se vendent pas, baisse du rendement de {output}%.",
     "upgrade_id": 1
   },
   {
     "id": 39,
     "name": "Imane",
-    "bag": 100,
+    "bag": 300,
     "cost": 500,
     "output": 0.06,
-    "text": "Imane coûte 500 biff et arrive avec un capital de 100 biff. Ses compétences sur After Effects augmente le rendement de 6%.",
+    "text": "Imane coûte {cost} biff et arrive avec un capital de {bag} biff. Ses compétences sur After Effects augmente le rendement de {output}%.",
     "upgrade_id": 1
   },
   {
@@ -356,7 +356,7 @@
     "bag": 600,
     "cost": 600,
     "output": -0.05,
-    "text": "Louise coûte 600 biff et arrive avec un capital de 600 biff. Mais les performances misérables de son microsoft surface baissent le rendement de 5%.",
+    "text": "Louise coûte {cost} biff et arrive avec un capital de {bag} biff. Mais les performances misérables de son microsoft surface baissent le rendement de {output}%.",
     "upgrade_id": 1
   },
   {
@@ -365,7 +365,7 @@
     "bag": 1500,
     "cost": 700,
     "output": 0,
-    "text": "Quentin coûte 700 biff et investit toute la trésorerie du GIC, +1500 biff.",
+    "text": "Quentin coûte {cost} biff et investit toute la trésorerie du GIC, +{bag} biff.",
     "upgrade_id": 1
   },
   {
@@ -374,7 +374,7 @@
     "bag": 300,
     "cost": 500,
     "output": 0.04,
-    "text": "Honorine coûte 500 biff et arrive avec un capital de 300 biff. Elle te met dans le mail hebdo de l'école, augmentation du rendement de 4%.",
+    "text": "Honorine coûte {cost} biff et arrive avec un capital de {bag} biff. Elle te met dans le mail hebdo de l'école, augmentation du rendement de {output}%.",
     "upgrade_id": 1
   },
   {
@@ -383,7 +383,7 @@
     "bag": 300,
     "cost": 600,
     "output": -0.15,
-    "text": "Ilyass coûte 600 biff et arrive avec un capital de 300 biff. Il casse les oreilles de tout le monde en jouant de l'oud en boucle. Rendement -15%.",
+    "text": "Ilyass coûte {cost} biff et arrive avec un capital de {bag} biff. Il casse les oreilles de tout le monde en jouant de l'oud en boucle. Rendement {output}%.",
     "upgrade_id": 1
   },
   {
@@ -392,7 +392,7 @@
     "bag": 0,
     "cost": 200,
     "output": -0.1,
-    "text": "Pauline coûte 200 biff. Elle passe son temps à compter combien d'objectif 35mm f2.8 803z a dans son placard. Baisse du rendement de 10%.",
+    "text": "Pauline coûte {cost} biff. Elle passe son temps à compter combien d'objectif 35mm f2.8 803z a dans son placard. Baisse du rendement de {output}%.",
     "upgrade_id": 1
   },
   {
@@ -401,7 +401,7 @@
     "bag": 0,
     "cost": 800,
     "output": 0,
-    "text": "Quentin coûte 800 biff. Il vous demande de payer son opération du pouce.",
+    "text": "Quentin coûte {cost} biff. Il vous demande de payer son opération du pouce.",
     "upgrade_id": 1
   },
   {
@@ -410,7 +410,7 @@
     "bag": 4000,
     "cost": 2000,
     "output": -0.4,
-    "text": "Emmanuel Macron coûte 2000 biff et arrive avec le capital du parti Renaissance (4000 biff), baisse du rendement de 40%. ",
+    "text": "Emmanuel Macron coûte {cost} biff et arrive avec le capital du parti Renaissance ({bag} biff), baisse du rendement de {output}%. ",
     "upgrade_id": 1
   },
   {
@@ -419,7 +419,7 @@
     "bag": 100,
     "cost": 500,
     "output": -0.1,
-    "text": "Leo coûte 500 biff et arrive avec un capital de 100 biff. Baisse du rendement de 10%.",
+    "text": "Leo coûte {cost} biff et arrive avec un capital de {bag} biff. Baisse du rendement de {output}%.",
     "upgrade_id": 1
   },
   {
@@ -428,7 +428,7 @@
     "bag": 0,
     "cost": 400,
     "output": -0.1,
-    "text": "Guilhem coûte 400 biff. Guimii music n'est pas encore assez rentable, -10% rendement.",
+    "text": "Guilhem coûte {cost} biff. Guimii music n'est pas encore assez rentable, {output}% rendement.",
     "upgrade_id": 1
   },
   {
@@ -437,7 +437,7 @@
     "bag": 2200,
     "cost": 1400,
     "output": 0.1,
-    "text": "Chevreuil coûte 1400 biff et arrive avec un capital de 2200 biff. Il reconnait les équations caractéristiques de la bourse, 10% de rendement.",
+    "text": "Chevreuil coûte {cost} biff et arrive avec un capital de {bag} biff. Il reconnait les équations caractéristiques de la bourse, +{output}% de rendement.",
     "upgrade_id": 1
   },
   {
@@ -446,7 +446,7 @@
     "bag": 1600,
     "cost": 400,
     "output": -0.2,
-    "text": "Arthur coûte 400 biff et arrive avec un capital de 1600 biff. Sa boîte de nuit : 'Le trashcan', croule sous les dettes, -20% rendement. ",
+    "text": "Arthur coûte {cost} biff et arrive avec un capital de {bag} biff. Sa boîte de nuit : 'Le trashcan', croule sous les dettes, -{output}% rendement. ",
     "upgrade_id": 1
   },
   {
@@ -455,7 +455,7 @@
     "bag": 500,
     "cost": 300,
     "output": -0.03,
-    "text": "Astrid coûte 300 biff et arrive avec un capital de 500 biff. Les mots de passe de son application de secret santa ont fuité, baisse du rendement de 3%.",
+    "text": "Astrid coûte {cost} biff et arrive avec un capital de {bag} biff. Les mots de passe de son application de secret santa ont fuité, baisse du rendement de {output}%.",
     "upgrade_id": 1
   },
   {
@@ -464,7 +464,7 @@
     "bag": 700,
     "cost": 700,
     "output": -0.02,
-    "text": "Elouan coûte 700 biff et arrive avec un capital de 700 biff. Il se perd pendant l'UTMB, vous devez payer ses recherches. Baisse du rendement de 2%.",
+    "text": "Elouan coûte {cost} biff et arrive avec un capital de {bag} biff. Il se perd pendant l'UTMB, vous devez payer ses recherches. Baisse du rendement de {output}%.",
     "upgrade_id": 1
   },
   {
@@ -473,7 +473,7 @@
     "bag": 300,
     "cost": 1200,
     "output": 0.2,
-    "text": "Aimé coûte 1200 biff et arrive avec un capital de 300 biff. Son esprit de jeune entrepreneur augmente le rendement de 20%.",
+    "text": "Aimé coûte {cost} biff et arrive avec un capital de {bag} biff. Son esprit de jeune entrepreneur augmente le rendement de {output}%.",
     "upgrade_id": 1
   },
   {
@@ -482,7 +482,7 @@
     "bag": 400,
     "cost": 100,
     "output": -0.01,
-    "text": "Marc coûte 100 biff et arrive avec un capital de 400 biff. Ses idées Marxistes l'empêchent de s'impliquer dans l'activité de l'organisation. Baisse du rendement de 1%.",
+    "text": "Marc coûte {cost} biff et arrive avec un capital de {bag} biff. Ses idées Marxistes l'empêchent de s'impliquer dans l'activité de l'organisation. Baisse du rendement de {output}%.",
     "upgrade_id": 1
   },
   {
@@ -491,7 +491,7 @@
     "bag": 0,
     "cost": 800,
     "output": 0,
-    "text": "Clément coûte 800 biff mais claque tout dans un iPhone 16 pro max 1 to. Ne rapporte rien.",
+    "text": "Clément coûte {cost} biff mais claque tout dans un iPhone 16 pro max 1 to. Ne rapporte rien.",
     "upgrade_id": 1
   },
   {
@@ -500,7 +500,7 @@
     "bag": 600,
     "cost": 500,
     "output": -0.1,
-    "text": "Octave coûte 500 biff et arrive avec un capital de 600 biff. Sa livraison hebdomadaire de palettes de Redbull baisse le rendement de 10%.",
+    "text": "Octave coûte {cost} biff et arrive avec un capital de {bag} biff. Sa livraison hebdomadaire de palettes de Redbull baisse le rendement de {output}%.",
     "upgrade_id": 1
   },
   {
@@ -509,7 +509,7 @@
     "bag": 700,
     "cost": 900,
     "output": 0.08,
-    "text": "Xavier coûte 900 biff et arrive avec un capital de 700 biff. Il fait un graphe des données de l'organisation pour optimiser ses performances. Rendement +8%.",
+    "text": "Xavier coûte {cost} biff et arrive avec un capital de {bag} biff. Il fait un graphe des données de l'organisation pour optimiser ses performances. Rendement +{output}%.",
     "upgrade_id": 1
   }
 ]

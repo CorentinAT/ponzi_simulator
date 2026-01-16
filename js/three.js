@@ -3,6 +3,16 @@ import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
 
 const spheresElement = document.getElementById("spheres");
 
+const colors = [
+  {
+    hex: 0xefbf04,
+    hexString: "#efbf04",
+    rgb: "rgb(239, 191, 4)",
+    rgba: "rgb(239, 191, 4, 0.239)",
+  },
+];
+let colorsIdx = 0;
+
 const scene = new THREE.Scene();
 scene.background = new THREE.Color(0x000000);
 const elementWidth =
@@ -202,14 +212,14 @@ export function nextLevel(turn) {
   if (turn > 0) {
     if (turn % 7 === 0) {
       // À partir du tour 7, on recommence à la taille 1 et on change la couleur
-      color = 0xefbf04;
+      color = colors[colorsIdx].hex;
       document.documentElement.style.setProperty(
         "--primary-color",
-        "rgb(239, 191, 4)"
+        colors[colorsIdx].rgb
       );
       document.documentElement.style.setProperty(
         "--primary-background",
-        "rgba(239, 191, 4, 0.239)"
+        colors[colorsIdx].rgba
       );
       fractalDepth = 0;
       camTranslation = 0.3;
@@ -220,8 +230,9 @@ export function nextLevel(turn) {
       spheresElement.children[0].classList.remove("active");
       const newSphereElement = document.createElement("div");
       newSphereElement.classList.add("sphere", "active");
-      newSphereElement.style.backgroundColor = "#efbf04";
+      newSphereElement.style.backgroundColor = colors[colorsIdx].hexString;
       spheresElement.appendChild(newSphereElement);
+      colorsIdx++;
     } else if (turn % 7 < 3) {
       // Pour les 3 premiers tours, on ajoute seulement un étage
       fractalDepth += 1;
