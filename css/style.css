@@ -48,6 +48,11 @@ body {
   background-color: var(--primary-background);
 }
 
+.stats {
+  display: flex;
+  gap: 24px;
+}
+
 button {
   border: solid 2px;
   border-color: white;

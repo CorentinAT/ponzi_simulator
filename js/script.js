@@ -132,7 +132,7 @@ function evenement() {
   propalesTextElement.style.display = "none";
   propalesElement.style.display = "none";
   acceptPropaleButton.style.display = "none";
-
+  document.getElementsByClassName("stats")[0].style.display = "none";
   // Choix aléatoire d'un évènement parmis ceux pas encore passés
   let idx;
   do {
@@ -196,18 +196,62 @@ function formatTextEvent(event) {
 function selectPropale1() {
   acceptPropaleButton.style.display = "initial";
   propale1Element.classList.add("selected");
-  selectedPropale = propale1;
   propale2Element.classList.remove("selected");
+  selectedPropale = propale1;
+  document.getElementsByClassName("stats")[0].style.display = "flex";
+
   document.getElementById("describe").textContent = formatTextPropale(propale1);
+
+  // GAIN
+  const gain = propale1.bag - propale1.cost;
+  const gainEl = document.getElementById("addgain");
+  gainEl.textContent = gain + " $";
+  gainEl.style.color = gain > 0 ? "#00ff00" : gain < 0 ? "#ff0000" : "#ffffff";
+
+  // RENDEMENT
+  const rendement = propale1.output;
+  const rendementEl = document.getElementById("addrendement");
+  rendementEl.textContent = rendement + " de rendement";
+  rendementEl.style.color =
+    rendement > 0 ? "#00ff00" : rendement < 0 ? "#ff0000" : "#ffffff";
+
+  // INFLUENCE
+  const influence = propale1.influence;
+  const influenceEl = document.getElementById("addinfluence");
+  influenceEl.textContent = influence + " d'influence";
+  influenceEl.style.color =
+    influence > 0 ? "#00ff00" : influence < 0 ? "#ff0000" : "#ffffff";
+
 }
 
 function selectPropale2() {
   acceptPropaleButton.style.display = "initial";
   propale2Element.classList.add("selected");
-  selectedPropale = propale2;
   propale1Element.classList.remove("selected");
+  selectedPropale = propale2;
+
   document.getElementById("describe").textContent = formatTextPropale(propale2);
+  document.getElementsByClassName("stats")[0].style.display = "flex";
+
+  const gain = propale2.bag - propale2.cost;
+  const gainEl = document.getElementById("addgain");
+  gainEl.textContent = gain + " $";
+  gainEl.style.color = gain > 0 ? "#00ff00" : gain < 0 ? "#ff0000" : "#ffffff";
+
+  const rendement = propale2.output;
+  const rendementEl = document.getElementById("addrendement");
+  rendementEl.textContent = rendement + " de rendement";
+  rendementEl.style.color =
+    rendement > 0 ? "#00ff00" : rendement < 0 ? "#ff0000" : "#ffffff";
+
+  const influence = propale2.influence;
+  const influenceEl = document.getElementById("addinfluence");
+  influenceEl.textContent = influence + " d'influence";
+  influenceEl.style.color =
+    influence > 0 ? "#00ff00" : influence < 0 ? "#ff0000" : "#ffffff";
 }
+
+
 
 // Victoire d'une partie, on affiche le résultat
 function endGame() {
