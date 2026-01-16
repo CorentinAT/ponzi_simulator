@@ -1,7 +1,6 @@
 export const API_URL = "https://ponzi-api.super-sympa.fr/";
 
 const scoresDialog = document.getElementById("scores");
-const scoresButton = document.getElementById("scores-button");
 const refreshButton = document.getElementById("refresh-scores");
 const closeScoresButton = document.getElementById("close-scores");
 
@@ -32,7 +31,9 @@ async function getScores() {
   }
 }
 
-scoresButton.onclick = () => scoresDialog.showModal();
+for (let button of document.getElementsByClassName("scores-button")) {
+  button.onclick = () => scoresDialog.showModal();
+}
 refreshButton.onclick = () => getScores();
 closeScoresButton.onclick = () => scoresDialog.close();
 
