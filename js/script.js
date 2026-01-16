@@ -2,7 +2,7 @@ import investisseurs from "../json/investisseurs.json";
 import evenements from "../json/events.json";
 import { nextLevel } from "./three";
 
-const NB_TOURS = 14;
+const NB_TOURS = 21;
 
 let tour = 0;
 

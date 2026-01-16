@@ -2,15 +2,29 @@ import * as THREE from "three";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
 import { nextTier } from "./script.js";
 
+const spheresElement = document.getElementById("spheres");
+
 const colors = [
+  {
+    hex: 0x00ff00,
+    hexString: "#00ff00",
+    rgb: "rgb(0, 255, 0)",
+    rgba: "rgb(0, 255, 0, 0.239)",
+  },
   {
     hex: 0xefbf04,
     hexString: "#efbf04",
     rgb: "rgb(239, 191, 4)",
     rgba: "rgb(239, 191, 4, 0.239)",
   },
+  {
+    hex: 0x1aa0ff,
+    hexString: "#1aa0ff",
+    rgb: "rgb(26, 260, 255)",
+    rgba: "rgb(26, 160, 255, 0.239)",
+  },
 ];
-let colorIdx = 0;
+let colorIdx = 1;
 
 const scene = new THREE.Scene();
 scene.background = new THREE.Color(0x000000);
@@ -35,10 +49,10 @@ const camera = new THREE.PerspectiveCamera(
   30,
   elementWidth / window.innerHeight,
   0.1,
-  1000
+  100000
 );
-camera.position.z = 3;
-camera.position.y = 1;
+camera.position.z = 0.3;
+camera.position.y = 0.1;
 
 const renderer = new THREE.WebGLRenderer({ antialias: true });
 renderer.setSize(elementWidth, window.innerHeight);
@@ -247,7 +261,9 @@ function createPascalPyramid(size) {
   // Créer la géométrie de base (contour)
   const { geometry } = createPyramidGeometry(size);
   const edges = new THREE.EdgesGeometry(geometry);
-  const lineMaterial = new THREE.LineBasicMaterial({ color: 0x00ff00 });
+  const lineMaterial = new THREE.LineBasicMaterial({
+    color: colors[colorIdx - 2].hex,
+  });
   const pyramidOutline = new THREE.LineSegments(edges, lineMaterial);
   group.add(pyramidOutline);
 
@@ -304,7 +320,7 @@ function createFractalPyramid(
   const h = size * Math.sqrt(0.5);
 
   // Si c'est la pyramide du sommet, on utilise la version Pascal
-  if (isTopLevel && colorIdx > 0) {
+  if (isTopLevel && colorIdx > 1) {
     const pascalPyramid = createPascalPyramid(size);
     group.add(pascalPyramid);
   } else {
@@ -416,7 +432,7 @@ export function nextLevel(turn) {
   let cameraPositionZ = camera.position.z;
 
   if (turn > 0) {
-    if (turn === 7) {
+    if (turn % 7 === 0) {
       // À partir du tour 7, on agrandit les nouvelles pyramides et on change la couleur
       nextTier();
       pyramidSize = pyramidSize * 5;
@@ -430,8 +446,15 @@ export function nextLevel(turn) {
         colors[colorIdx].rgba
       );
       fractalDepth = 1;
+      for (let i = 0; i < colorIdx; i++) {
+        spheresElement.children[i].classList.remove("active");
+      }
+      const newSphereElement = document.createElement("div");
+      newSphereElement.classList.add("sphere", "active");
+      newSphereElement.style.backgroundColor = colors[colorIdx].hexString;
+      spheresElement.appendChild(newSphereElement);
       colorIdx++;
-    } else if (turn % 7 < 3) {
+    } else if (fractalDepth < 2) {
       // Pour les 3 premiers tours, on ajoute seulement un étage
       fractalDepth += 1;
       camTranslation = 0.3;
