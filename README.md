@@ -20,6 +20,18 @@ docker build -t ponzi-simulator .
 docker run -p 80:80 ponzi-simulator
 ```
 
+## PATCH 1.2 (vendredi)
+
+Voici la liste des améliorations de vendredi :
+
+- nombre d'étages maximum augmenté de 7 à 20, tous les 7 tours, l'ancienne pyramide s'imbrique dans une nouvelle pyramide qui change de couleur
+- scoreboard : partagez votre highscore pour rentrer dans le prestigieux classement des plus grands escrocs de la planète !
+- nouvelle variable : *l'influence*, qui multiplie l'apport en biff des investisseurs sans modifier leur coût
+- tiers d'évènement : certains évènements n'apparaissent qu'à partir de la deuxième pyramide, pour éviter des parties trop courtes
+- nouvel affichage qui calcule les propositions et affiche les données en rouge ou en vert selon leur valeur 
+- scaling des données : au fur et à mesure des étages de la pyramide, les valeurs en coût et en apport sont de plus en plus grandes.
+- plus d'évènements différents, des nouveaux investisseurs et un équilibrage général
+
 ## Explications
 
 Ce simulateur vous met dans la peau d'un escroc en herbe avec des rêves de richesse pleins la tête.
