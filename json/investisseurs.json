@@ -15,7 +15,7 @@
     "bag": 600,
     "cost": 400,
     "output": -0.04,
-    "influence": 0.02,
+    "influence": 0.06,
     "text": "Léna coûte {cost} biff et arrive avec un capital de {bag} biff. Cependant elle baisse le rendement de {output}%.",
     "upgrade_id": 1
   },
@@ -84,7 +84,7 @@
     "name": "Alina",
     "bag": 100,
     "cost": 700,
-    "output": 0.04,
+    "output": 0.05,
     "influence": 0.08,
     "text": "Alina coûte {cost} biff et arrive avec un capital de {bag} biff. Elle augmente le rendement de {output}%.",
     "upgrade_id": 1
@@ -124,7 +124,7 @@
     "name": "Romane J.",
     "bag": 200,
     "cost": 200,
-    "output": -0.06,
+    "output": 0.03,
     "influence": 0.06,
     "text": "Romane coûte {cost} biff et arrive avec un capital de {bag} biff. Elle baisse le rendement de {output}%.",
     "upgrade_id": 1
@@ -152,7 +152,7 @@
   {
     "id": 16,
     "name": "Laïn",
-    "bag": 1000,
+    "bag": 1100,
     "cost": 800,
     "output": 0.04,
     "influence": 0.04,
@@ -195,7 +195,7 @@
     "bag": 600,
     "cost": 800,
     "output": -0.05,
-    "influence": 0.05,
+    "influence": 0.15,
     "text": "Qays coûte {cost} biff et arrive avec un capital de {bag} biff. Baisse du rendement de {output}%.",
     "upgrade_id": 1
   },
@@ -222,7 +222,7 @@
   {
     "id": 23,
     "name": "Kellian",
-    "bag": 400,
+    "bag": 800,
     "cost": 400,
     "output": -0.06,
     "influence": -0.06,
@@ -254,7 +254,7 @@
     "name": "Julie",
     "bag": 1000,
     "cost": 800,
-    "output": -0.1,
+    "output": -0.05,
     "influence": 0.1,
     "text": "Julie coûte {cost} biff et arrive avec un capital de {bag} biff. Baisse du rendement de {output}%.",
     "upgrade_id": 1
@@ -293,7 +293,7 @@
     "id": 30,
     "name": "Romane M.",
     "bag": 1200,
-    "cost": 900,
+    "cost": 700,
     "output": -0.05,
     "influence": -0.05,
     "text": "Romane coûte {cost} biff et arrive avec un capital de {bag} biff. La prépa c'est dur, baisse du rendement de {output}%.",
@@ -512,8 +512,8 @@
   {
     "id": 52,
     "name": "Elouan R",
-    "bag": 700,
-    "cost": 700,
+    "bag": 450,
+    "cost": 450,
     "output": -0.02,
     "influence": 0.05,
     "text": "Elouan coûte {cost} biff et arrive avec un capital de {bag} biff. Il se perd pendant l'UTMB, vous devez payer ses recherches. Baisse du rendement de {output}%.",
