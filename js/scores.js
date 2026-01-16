@@ -1,17 +1,17 @@
-const API_URL = "https://ponzi-api.super-sympa.fr/";
+export const API_URL = "https://ponzi-api.super-sympa.fr/";
 
 const scoresDialog = document.getElementById("scores");
-const scoresButton = document.getElementById("scoresButton");
-
-function showScores() {
-  scoresDialog.showModal();
-}
+const scoresButton = document.getElementById("scores-button");
+const refreshButton = document.getElementById("refresh-scores");
+const closeScoresButton = document.getElementById("close-scores");
 
 async function getScores() {
   const response = await fetch(API_URL + "scores");
   const data = await response.json();
 
   const scoreTableBody = scoresDialog.getElementsByTagName("tbody")[0];
+
+  scoreTableBody.innerHTML = "";
 
   for (let i = 0; i < data.scores.length; i++) {
     const score = data.scores[i];
@@ -32,6 +32,8 @@ async function getScores() {
   }
 }
 
-scoresButton.addEventListener("click", () => showScores());
+scoresButton.onclick = () => scoresDialog.showModal();
+refreshButton.onclick = () => getScores();
+closeScoresButton.onclick = () => scoresDialog.close();
 
 getScores();

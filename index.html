@@ -14,7 +14,7 @@
     </div>
     <div id="rules">
       <h1>Pyramide de Ponzi simulator</h1>
-      <button id="scoresButton">Voir les scores</button>
+      <button id="scores-button">Voir les scores</button>
       <p>
         Ce simulateur vous met dans la peau d'un <b>escroc en herbe avec des rêves
         de richesse pleins la tête.</b>
@@ -60,7 +60,7 @@
     </div>
     <div id="game">
       <h1>Pyramide de Ponzi simulator</h1>
-      <button id="scoresButton">Voir les scores</button>
+      <button id="scores-button">Voir les scores</button>
       <div id="infos">
         <div><span>$</span><span id="biff"></span></div>
         <div>Rendement : <span id="rendement"></span></div>
@@ -90,7 +90,7 @@
       <p id="describe"></p>
       <div class="stats">
         <p id="addgain"></p>
-        <p id="addrendement"> </p>
+        <p id="addrendement"></p>
         <p id="addinfluence"></p>
       </div>
 
@@ -99,6 +99,10 @@
 
     <dialog id="scores">
       <h2>Scores</h2>
+      <div id="scores-actions">
+        <button id="refresh-scores">Actualiser</button>
+        <button id="close-scores">Fermer</button>
+      </div>
       <table>
         <thead>
           <tr>
@@ -110,6 +114,21 @@
         </thead>
         <tbody></tbody>
       </table>
+    </dialog>
+
+    <dialog id="end">
+      <h2 id="end-title">Fin</h2>
+      <p id="end-text"></p>
+      <form id="score-form">
+        <label>
+          <span><b>Publier le score</b> (optionnel)</span>
+          <input id="username" type="text" placeholder="Pseudo..." required
+        /></label>
+        <div>
+          <button type="button" id="close-end">Quitter</button>
+          <button type="submit">Publier</button>
+        </div>
+      </form>
     </dialog>
 
     <script class="render" type="module" src="js/three.js"></script>

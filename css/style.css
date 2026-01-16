@@ -18,11 +18,15 @@
   display: flex;
 }
 
+input,
+body {
+  background-color: black;
+}
+
 body {
   display: flex;
   max-height: 100%;
   overflow-x: hidden;
-  background-color: black;
 }
 
 #propales {
@@ -151,14 +155,16 @@ button.disabled {
 
 dialog {
   background-color: black;
+  max-height: 50%;
 }
 
-dialog * {
+dialog *:not(input) {
   text-align: center;
 }
 
 table {
   border-collapse: collapse;
+  overflow-y: auto;
 }
 
 td,
@@ -166,8 +172,34 @@ th {
   border: solid 1px white;
 }
 
-th {
+th,
+td {
   padding: 10px 15px;
+}
+
+input {
+  font-size: large;
+}
+
+label {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+}
+
+#scores-actions {
+  margin-bottom: 15px;
+}
+
+#end form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+}
+
+#close-end:hover {
+  background-color: rgba(255, 0, 0, 0.239);
 }
 
 @media screen and (max-width: 900px) {

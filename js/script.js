@@ -1,6 +1,7 @@
 import investisseurs from "../json/investisseurs.json";
 import evenements from "../json/events.json";
 import { nextLevel } from "./three";
+import { API_URL } from "./scores";
 
 const NB_TOURS = 21;
 
@@ -25,11 +26,16 @@ const startButton = document.getElementById("start");
 const propalesElement = document.getElementById("propales");
 const descriptionElement = document.getElementById("describe");
 const propalesTextElement = document.getElementById("propales-text");
+const closeEndButton = document.getElementById("close-end");
+const endTextElement = document.getElementById("end-text");
+const endDialog = document.getElementById("end");
+const publishScoreForm = document.getElementById("score-form");
+const endTitleElement = document.getElementById("end-title");
 
 // Attributs au lancement de la partie
 const game = {
   biff: 1000,
-  rendement: 10,
+  rendement: 1,
   influence: 1,
   tour: 1,
   tier: 1,
@@ -97,11 +103,7 @@ function nouveauTour() {
 function acheter() {
   if (game.biff < selectedPropale.cost) {
     // Si on ne peut pas l'acheter, alors c'est perdu
-    game.enCours = false;
-    alert(
-      "Game over : plus assez de biff, vous avez été trop gourmand et avez tout perdu"
-    );
-    window.location.reload();
+    endGame(false);
     return;
   }
 
@@ -121,7 +123,7 @@ function acheter() {
 
   if (game.tour > NB_TOURS - 1) {
     majStats();
-    endGame();
+    endGame(true);
     return;
   }
   evenement();
@@ -223,7 +225,6 @@ function selectPropale1() {
   influenceEl.textContent = influence + " d'influence";
   influenceEl.style.color =
     influence > 0 ? "#00ff00" : influence < 0 ? "#ff0000" : "#ffffff";
-
 }
 
 function selectPropale2() {
@@ -253,18 +254,23 @@ function selectPropale2() {
     influence > 0 ? "#00ff00" : influence < 0 ? "#ff0000" : "#ffffff";
 }
 
-
-
-// Victoire d'une partie, on affiche le résultat
-function endGame() {
-  alert(
-    "Bien joué ! Vous avez survécu " +
+// Fin de partie, on affiche le résultat
+function endGame(win) {
+  if (win) {
+    endTitleElement.textContent = "Victoire";
+    endTextElement.textContent =
+      "Vous avez survécu " +
       (NB_TOURS - 1) +
       " tours, vous lâchez tout et partez du pays avec " +
       parseInt(game.biff) +
-      " biff"
-  );
-  window.location.reload();
+      " biff";
+  } else {
+    endTitleElement.textContent = "Game over";
+    endTextElement.textContent = `Plus assez de biff, vous avez été trop gourmand et avez tout perdu (survécu ${
+      tour - 1
+    } tour(s)).`;
+  }
+  endDialog.showModal();
 }
 
 // Lancer la partie après les explications
@@ -275,8 +281,26 @@ function startGame() {
   nouveauTour();
 }
 
+async function publishScore(e) {
+  e.preventDefault();
+  await fetch(API_URL + "score", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      username: document.getElementById("username").value,
+      biff: game.biff,
+      turns: game.tour - 1,
+    }),
+  });
+  window.location.reload();
+}
+
 propale1Element.onclick = () => selectPropale1();
 propale2Element.onclick = () => selectPropale2();
 acceptPropaleButton.onclick = () => acheter();
 eventButton.onclick = () => acceptEvent();
 startButton.onclick = () => startGame();
+publishScoreForm.onsubmit = (e) => publishScore(e);
+closeEndButton.onclick = () => window.location.reload();
