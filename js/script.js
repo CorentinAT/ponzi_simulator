@@ -206,7 +206,7 @@ function selectPropale1() {
   // GAIN
   const gain = propale1.bag - propale1.cost;
   const gainEl = document.getElementById("addgain");
-  gainEl.textContent = gain + " $";
+  gainEl.textContent = gain * 1.1 ** (tour - 1) + " $";
   gainEl.style.color = gain > 0 ? "#00ff00" : gain < 0 ? "#ff0000" : "#ffffff";
 
   // RENDEMENT
@@ -236,7 +236,7 @@ function selectPropale2() {
 
   const gain = propale2.bag - propale2.cost;
   const gainEl = document.getElementById("addgain");
-  gainEl.textContent = gain + " $";
+  gainEl.textContent = gain * 1.1 ** (tour - 1) + " $";
   gainEl.style.color = gain > 0 ? "#00ff00" : gain < 0 ? "#ff0000" : "#ffffff";
 
   const rendement = propale2.output;
