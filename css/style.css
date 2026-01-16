@@ -149,6 +149,27 @@ button.disabled {
   animation: float 3s ease-in-out infinite;
 }
 
+dialog {
+  background-color: black;
+}
+
+dialog * {
+  text-align: center;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+td,
+th {
+  border: solid 1px white;
+}
+
+th {
+  padding: 10px 15px;
+}
+
 @media screen and (max-width: 900px) {
   body {
     flex-direction: column-reverse;

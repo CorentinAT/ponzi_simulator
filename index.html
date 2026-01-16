@@ -14,6 +14,7 @@
     </div>
     <div id="rules">
       <h1>Pyramide de Ponzi simulator</h1>
+      <button id="scoresButton">Voir les scores</button>
       <p>
         Ce simulateur vous met dans la peau d'un escroc en herbe avec des rêves
         de richesse pleins la tête.
@@ -54,6 +55,7 @@
     </div>
     <div id="game">
       <h1>Pyramide de Ponzi simulator</h1>
+      <button id="scoresButton">Voir les scores</button>
       <div id="infos">
         <div><span>$</span><span id="biff"></span></div>
         <div>Rendement : <span id="rendement"></span></div>
@@ -89,7 +91,23 @@
       <button id="acceptpropale">Accepter la propale</button>
     </div>
 
+    <dialog id="scores">
+      <h2>Scores</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Rang</th>
+            <th>Pseudo</th>
+            <th>Biff</th>
+            <th>Nombre de tours</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </dialog>
+
     <script class="render" type="module" src="js/three.js"></script>
     <script class="infotab" type="module" src="js/script.js"></script>
+    <script class="infotab" type="module" src="js/scores.js"></script>
   </body>
 </html>
