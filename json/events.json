@@ -27,7 +27,7 @@
     "id": 4,
     "name": "Héritage : Vous récupérez {biff} biff de Mamie, paix à son âme, mais vous payez {output}% de frais de notaire",
     "mode": "add",
-    "biff": 1000,
+    "biff": 1500,
     "output": -0.2,
     "tier": 1
   },
@@ -37,7 +37,7 @@
     "mode": "divide",
     "biff": 4,
     "output": 1,
-    "tier": 1
+    "tier": 2
   },
   {
     "id": 6,
@@ -68,7 +68,7 @@
     "name": "Coup de pub : votre fond d'investissement est partagé sur la chaîne CNews, +{output}% rendement",
     "mode": "add",
     "biff": 0,
-    "output": 0.1,
+    "output": 0.2,
     "tier": 1
   },
   {
@@ -83,7 +83,7 @@
     "id": 11,
     "name": "Petit business : vous arnaquez un type dans la rue au jeu de Dé, +{biff} biff.",
     "mode": "add",
-    "biff": 100,
+    "biff": 300,
     "output": 0.0,
     "tier": 1
   },
@@ -99,8 +99,8 @@
     "id": 13,
     "name": "Vous jouez au Casino ! Evitez de tout mettre sur le rouge ;)",
     "mode": "random",
-    "min": -1000,
-    "max": 500,
+    "min": -600,
+    "max": 600,
     "tier": 1
   },
   {
@@ -139,7 +139,7 @@
     "id": 18,
     "name": "Cadeau de Mère-grand : +{biff} biff, merci mamie :)",
     "mode": "add",
-    "biff": 100,
+    "biff": 200,
     "output": 0.0,
     "tier": 1
   },
@@ -164,7 +164,7 @@
     "name": "Crevaison : {biff} biff pour réparer, et avec l'assurance, -{output}% rendement",
     "mode": "add",
     "biff": -150,
-    "output": -0.2,
+    "output": -0.1,
     "tier": 1
   },
   {
@@ -179,7 +179,7 @@
     "id": 23,
     "name": "Get pranked, ça tourne bien ! +{biff} biff",
     "mode": "add",
-    "biff": 450,
+    "biff": 500,
     "output": 0.0,
     "tier": 1
   },
@@ -212,7 +212,7 @@
     "name": "Rachat de CoolLab : Jules vous cède ses parts en échange de {biff} biff, +{output}% rendement",
     "mode": "add",
     "biff": -600,
-    "output": 0.15,
+    "output": 0.2,
     "tier": 1
   },
   {
