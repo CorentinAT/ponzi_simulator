@@ -120,30 +120,6 @@ button.disabled {
   font-weight: bold;
 }
 
-#pyramid {
-  position: relative;
-}
-
-#spheres {
-  position: absolute;
-  top: 15px;
-  left: 15px;
-  display: flex;
-  gap: 10px;
-}
-
-.sphere {
-  width: 20px;
-  height: 20px;
-  border-radius: 100%;
-  background-color: #00ff00;
-  opacity: 0.7;
-}
-
-.sphere.active {
-  animation: float 3s ease-in-out infinite;
-}
-
 @media screen and (max-width: 900px) {
   body {
     flex-direction: column-reverse;
@@ -173,19 +149,5 @@ button.disabled {
 
   #rules {
     overflow-y: auto;
-  }
-}
-
-@keyframes float {
-  0% {
-    opacity: 1;
-  }
-
-  50% {
-    opacity: 0.7;
-  }
-
-  100% {
-    opacity: 1;
   }
 }

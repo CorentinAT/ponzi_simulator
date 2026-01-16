@@ -77,6 +77,9 @@ function nouveauTour() {
   nextLevel(tour);
 
   tour++;
+  if (tour === 8) {
+    tour++;
+  }
 
   majStats();
   afficherPropositions();
@@ -107,7 +110,7 @@ function acheter() {
   propale1Element.classList.remove("selected");
   propale2Element.classList.remove("selected");
 
-  if (game.tour > NB_TOURS) {
+  if (game.tour > NB_TOURS - 1) {
     majStats();
     endGame();
     return;
@@ -193,7 +196,7 @@ function selectPropale2() {
 function endGame() {
   alert(
     "Bien joué ! Vous avez survécu " +
-      NB_TOURS +
+      (NB_TOURS - 1) +
       " tours, vous lâchez tout et partez du pays avec " +
       parseInt(game.biff) +
       " biff"
