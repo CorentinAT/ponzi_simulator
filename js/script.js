@@ -62,7 +62,7 @@ function nouveauTour() {
   do {
     const idx = Math.floor(Math.random() * investisseurs.length);
     propales[1] = investisseurs[idx];
-  } while (propales[1].id === propales[0].id);
+  } while (propales[1].id === propales[0].id || investisseursAchetes.includes(propales[1].id));
 
   // Augmentation de la taille de la pyramide 3D
   nextLevel(partie.tour);
@@ -223,9 +223,10 @@ function acceptEvenement() {
     partie.rendement /= parseFloat(evenementCourant.rendement);
   } else if (evenementCourant.mode === "random") {
     const resultatCasino = Math.floor(
-      Math.random() *
+      (Math.random() *
         (parseInt(evenementCourant.max) - parseInt(evenementCourant.min)) +
-        parseInt(evenementCourant.min),
+        parseInt(evenementCourant.min)) *
+        valeurMultiplicateurTour(),
     );
     partie.biff += resultatCasino;
     // On informe le joueur du résultat du casino
