@@ -45,6 +45,7 @@ export function nextTier() {
 function majStats() {
   document.getElementById("biff").textContent = game.biff.toFixed(0) + "$";
   document.getElementById("rendement").textContent = game.rendement.toFixed(2);
+  document.getElementById("influence").textContent = game.influence.toFixed(2);
 }
 
 function afficherPropositions() {
