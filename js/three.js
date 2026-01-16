@@ -1,5 +1,6 @@
 import * as THREE from "three";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
+import { nextTier } from "script.js";
 
 const colors = [
   {
@@ -417,6 +418,7 @@ export function nextLevel(turn) {
   if (turn > 0) {
     if (turn === 7) {
       // À partir du tour 7, on agrandit les nouvelles pyramides et on change la couleur
+      nextTier();
       pyramidSize = pyramidSize * 5;
       color = colors[colorIdx].hex;
       document.documentElement.style.setProperty(

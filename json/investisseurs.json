@@ -5,6 +5,7 @@
     "bag": 200,
     "cost": 200,
     "output": 0.01,
+    "influence": 0,
     "text": "Alex coûte {cost} biff et arrive avec un capital de {bag} biff. Grâce à son automate cellulaire musical, il améliore le rendement de {output}%",
     "upgrade_id": 1
   },

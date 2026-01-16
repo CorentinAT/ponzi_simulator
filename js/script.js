@@ -30,10 +30,16 @@ const propalesTextElement = document.getElementById("propales-text");
 const game = {
   biff: 1000,
   rendement: 10,
+  influence: 1,
   tour: 1,
+  tier: 1,
   nbInvestisseurs: 0,
   enCours: true,
 };
+
+export function nextTier() {
+  game.tier++;
+}
 
 // Mettre à jour les infos de la partie à l'écran
 function majStats() {
