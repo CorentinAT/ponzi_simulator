@@ -111,7 +111,7 @@ function acheter() {
   investisseursAchetes.push(selectedPropale.id);
   game.biff -= parseInt(selectedPropale.cost * 1.1 ** (tour - 1));
   game.biff += parseInt(
-    selectedPropale.bag * 1.1 ** (tour - 1) * game.influence
+    selectedPropale.bag * 1.1 ** (tour - 1) * game.influence,
   );
   game.rendement += parseFloat(selectedPropale.output);
   game.influence += parseFloat(selectedPropale.influence);
@@ -164,7 +164,7 @@ function acceptEvent() {
     const resultatCasino = Math.floor(
       Math.random() *
         (parseInt(currentEvent.max) - parseInt(currentEvent.min)) +
-        parseInt(currentEvent.min)
+        parseInt(currentEvent.min),
     );
     game.biff += resultatCasino;
     // On informe le joueur du résultat du casino
@@ -182,23 +182,20 @@ function formatTextPropale(propale) {
     .replaceAll("{cost}", Math.floor(propale.cost * 1.1 ** (tour - 1)))
     .replaceAll(
       "{bag}",
-      Math.floor(propale.bag * 1.1 ** (tour - 1) * game.influence)
+      Math.floor(propale.bag * 1.1 ** (tour - 1) * game.influence),
     )
     .replaceAll("{output}", Math.floor(Math.abs(propale.output * 100)));
 }
 
 function formatTextEvent(event) {
-  const text = event.name.replaceAll(
-    "{output}",
-    Math.floor(Math.abs(event.output * 100))
-  );
   if (event.mode === "add") {
-    return text.replaceAll(
-      "{biff}",
-      Math.floor(event.biff * 1.1 ** (tour - 1))
-    );
+    return event.name
+      .replaceAll("{output}", Math.floor(Math.abs(event.output * 100)))
+      .replaceAll("{biff}", Math.floor(event.biff * 1.1 ** (tour - 1)));
   }
-  return text.replaceAll("{biff}", Math.floor(event.biff));
+  return text
+    .replaceAll("{output}", Math.floor(event.output))
+    .replaceAll("{biff}", Math.floor(event.biff));
 }
 
 // Clic sur une proposition (avant validation)
