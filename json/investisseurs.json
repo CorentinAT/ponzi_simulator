@@ -124,7 +124,7 @@
     "nom": "Romane J.",
     "bag": 200,
     "cout": 200,
-    "rendement": 0.03,
+    "rendement": -0.03,
     "influence": 0.06,
     "text": "Romane coûte {cout} biff et arrive avec un capital de {bag} biff. Elle baisse le rendement de {rendement}%.",
     "upgrade_id": 1
