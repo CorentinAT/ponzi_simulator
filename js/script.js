@@ -62,7 +62,10 @@ function nouveauTour() {
   do {
     const idx = Math.floor(Math.random() * investisseurs.length);
     propales[1] = investisseurs[idx];
-  } while (propales[1].id === propales[0].id || investisseursAchetes.includes(propales[1].id));
+  } while (
+    propales[1].id === propales[0].id ||
+    investisseursAchetes.includes(propales[1].id)
+  );
 
   // Augmentation de la taille de la pyramide 3D
   nextLevel(partie.tour);
@@ -264,7 +267,7 @@ function endGame(win) {
 
 // On met en ligne le score pour qu'il apparaîsse dans le tableau
 async function publishScore(e) {
-  e.prevenementDefault();
+  e.preventDefault();
   await fetch(API_URL + "score", {
     method: "POST",
     headers: {
