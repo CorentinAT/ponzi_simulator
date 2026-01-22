@@ -276,7 +276,7 @@
     "cout": 300,
     "rendement": 0.02,
     "influence": 0.1,
-    "text": "Romana coûte {cout} biff et arrive avec un capital de {bag} biff. Baisse du rendement de {rendement}%.",
+    "text": "Romana coûte {cout} biff et arrive avec un capital de {bag} biff. Augmentation du rendement de {rendement}%.",
     "upgrade_id": 1
   },
   {
@@ -567,6 +567,16 @@
     "rendement": 0.08,
     "influence": 0.05,
     "text": "Xavier coûte {cout} biff et arrive avec un capital de {bag} biff. Il fait un graphe des données de l'organisation pour optimiser ses performances. Rendement +{rendement}%.",
+    "upgrade_id": 1
+  },
+  {
+    "id": 58,
+    "nom": "Iwen",
+    "bag": 600,
+    "cout": 1200,
+    "rendement": 0.05,
+    "influence": 0.2,
+    "text": "IWem coûte {cout} biff et arrive avec un capital de {bag} biff. Il augmente le rendement de {rendement}%.",
     "upgrade_id": 1
   }
 ]
