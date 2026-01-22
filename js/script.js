@@ -275,7 +275,7 @@ async function publishScore(e) {
     },
     body: JSON.stringify({
       username: document.getElementById("username").value,
-      biff: partie.biff,
+      biff: partie.biff + 0.001,
       turns: partie.tour - 1,
     }),
   });
