@@ -24,7 +24,7 @@
     "nom": "Elouan L",
     "bag": 100,
     "cout": 600,
-    "rendement": 0.05,
+    "rendement": 0.1,
     "influence": -0.05,
     "text": "Elouan coûte {cout} biff et arrive avec un capital de {bag} biff. Ses parts dans différentes usines de production de boissons alcoolisées augmentent le rendement de {rendement}%.",
     "upgrade_id": 1
@@ -234,7 +234,7 @@
     "nom": "Chloé",
     "bag": 300,
     "cout": 200,
-    "rendement": 0.2,
+    "rendement": 0.05,
     "influence": 0.02,
     "text": "Chloé coûte {cout} biff et arrive avec un capital de {bag} biff. Augmentation du rendement de {rendement}%.",
     "upgrade_id": 1
